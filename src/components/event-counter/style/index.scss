@@ -1,0 +1,18 @@
+.event-counter {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: 5px;
+  border-radius: 50%;
+  font-size: 12px;
+
+  //&:hover {
+  //  cursor: pointer;
+  //}
+
+  &._green {
+    color: #FBFEF9;
+    background-color: #00e3a6;
+  }
+}

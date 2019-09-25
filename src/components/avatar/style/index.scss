@@ -1,0 +1,16 @@
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin-right: 10px;
+
+  &:hover {
+    border-color: #00e3a6;
+    cursor: pointer;
+  }
+
+  &._rounded {
+    border-radius: 50%;
+  }
+}
