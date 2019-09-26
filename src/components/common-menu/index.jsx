@@ -1,14 +1,19 @@
-import * as React from 'react';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './style/index.scss';
 
 // as ng-repeat for menu
 
-function CommonMenu(props) {
-    return (
-        <ul className="common-menu">
-            <li className="favorite"><a>Favorites</a></li>
-            <li className="messages"><a>Messages</a></li>
-        </ul>
-    );
+class CommonMenu extends Component {
+    render() {
+        return (
+            <nav>
+            <ul className="common-menu">
+                <li className="favorite"><Link to="/favorites">Favorites</Link></li>
+                <li className="messages"><Link to="/messages">Messages</Link></li>
+            </ul>
+            </nav>
+        );
+    }
 }
 export default CommonMenu;

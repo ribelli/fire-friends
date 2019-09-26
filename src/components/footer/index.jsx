@@ -1,11 +1,13 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import './style/index.scss';
 
-function Footer() {
-    return (
-        <footer className="footer-layer">
-            <a href="http://google.com"> lalala </a>
-        </footer>
-    );
+class Footer extends Component {
+    render() {
+        return (
+            <footer className="footer-layer">
+                <a href="http://google.com"> lalala </a>
+            </footer>
+        );
+    }
 }
 export default Footer;

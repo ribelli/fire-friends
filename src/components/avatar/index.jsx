@@ -1,14 +1,16 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import './style/index.scss';
 
 // add srcset for img
 
-function Avatar(props) {
-    return (
-        <img className="user-avatar _rounded"
-             src={props.user.avatarUrl}
-             alt={props.user.name} />
-    );
+class Avatar extends Component {
+    render() {
+        return (
+            <img className="user-avatar _rounded"
+                 src={this.props.user.avatarUrl}
+                 alt={this.props.user.name} />
+        )
+    }
 }
 
 export default Avatar;

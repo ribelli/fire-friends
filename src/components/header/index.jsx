@@ -1,16 +1,17 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import './style/index.scss';
 import UserCard from "../user-card";
 import CommonMenu from "../common-menu";
-import Avatar from "../avatar";
-import EventCounter from  "../event-counter";
+import { Link } from 'react-router-dom';
+// import Avatar from "../avatar";
+// import EventCounter from  "../event-counter";
 
 const comment = {
     date: new Date(),
     text: 'I hope you enjoy learning React!',
     author: {
         name: 'Mr Kitty',
-        id: 'http://localhost:3000/',
+        id: '/home',
         avatarUrl: 'https://placekitten.com/g/64/64',
     },
     action: {
@@ -18,15 +19,17 @@ const comment = {
     },
 };
 
-function Header(props) {
-    return (
-        <header className="header-layer _dark">
-            <div className="header-line">
-                <a href="http://google.com" className="logo">Friends</a>
-                <UserCard user={comment.author} eventCounter={comment.action} />
-            </div>
-            <CommonMenu />
-        </header>
-    );
+class Header extends Component {
+    render() {
+        return (
+            <header className="header-layer _dark">
+                <div className="header-line">
+                    <Link to="/" className="logo">Friends</Link>
+                    <UserCard user={comment.author} eventCounter={comment.action}/>
+                </div>
+                <CommonMenu/>
+            </header>
+        );
+    }
 }
 export default Header;

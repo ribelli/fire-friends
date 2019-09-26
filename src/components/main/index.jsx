@@ -1,11 +1,13 @@
-import * as React from 'react';
+import React, { Component } from 'react';
 import './style/index.scss';
 
-function Main(props) {
-    return (
-        <div className="main">
-            <div>!</div>
-        </div>
-    );
+class Main extends Component {
+    render() {
+        return (
+            <div className="main">
+                <div>fhhf</div>
+            </div>
+        );
+    }
 }
 export default Main;
