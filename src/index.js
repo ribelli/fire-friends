@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import HomePage from './routes/home/home.js';
+import MessagesPage from "./routes/messages/messages";
 // import LoginPage from './routes/login/login.js';
 import * as serviceWorker from './serviceWorker';
 
@@ -22,6 +23,7 @@ ReactDOM.render(
                     {/*<Route exact path='/registration/validation' component={RegistrationValidationPage} />*/}
                     {/*<Route exact path='/reset/password' component={ResetPasswordPage} />*/}
                     <Route exact path='/' component={HomePage}/>
+                    <Route exact path='/messages' component={MessagesPage}/>
                     {/*<Route exact path='/note/:id' component={AuthenticationRequired(NotePage)}/>*/}
                 </App>
             </Switch>

@@ -1,0 +1,23 @@
+.input-layer {
+  display: flex;
+  padding: 10px 35px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #efefef;
+  border-top: 1px solid #e0e0e0;
+
+  &__textarea {
+    font-size: 14px;
+    padding: 10px 17px;
+    border: 2px solid;
+    border-radius: 5px;
+    text-align: start;
+    width: 100%;
+
+    &._dark {
+      border-color: #333333;
+    }
+  }
+}
