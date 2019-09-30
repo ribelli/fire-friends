@@ -1,41 +1,38 @@
 import React, { Component } from 'react';
+import ChatMessage from "../chat-message";
 import './style/index.scss';
 
 class ChatView extends Component {
+
+    componentDidUpdate () {
+        let el = this.refs.wrap;
+        el.scrollTop = el.scrollHeight;
+    }
+
     render() {
         const {messages} = this.props;
         return (
-            <ul className="chat-view">
-            {messages.map(message => this.renderMessage(message))}
-            </ul>
+                <ul className="chat-view" ref='wrap'>
+                    {messages.map((message, i) => this.renderMessage(message, i))}
+                </ul>
         )
     }
-
     // avatarUrl backgroundImg
 
-    renderMessage(message) {
-        const {user, text} = message;
+    renderMessage(message, i) {
+        const {user, text, date} = message;
         const {currentUser} = this.props;
-        const isMessageFromMe = user.id === currentUser.id;
-        console.log(user, currentUser);
-        const className = isMessageFromMe ?
-            "message-layer currentMember" : "message-layer";
-        return (
-            <li className={className} key={message.id}>
-                <span
-                    className="avatar"
-                    style={{borderColor: user.color, backgroundImage: `url(${user.avatarUrl ? user.avatarUrl : 'none'})`}}
-                />
-                <div className="message-layer__box">
-                    <div className="message-layer__sender-info">
-                        {user.username}
-                    </div>
-                    <div className="message-layer__message">
-                        {text}
-                    </div>
-                </div>
-            </li>
-        )
+        const isCurrentUser = user.id === currentUser.id;
+        let props = {
+            user,
+            text: text,
+            date,
+            isCurrentUser
+        };
+        // if (isCurrentUser) {
+        //     props.ref = 'activeItem';
+        // }
+        return <ChatMessage {...props} key={i}/>
     }
 }
 

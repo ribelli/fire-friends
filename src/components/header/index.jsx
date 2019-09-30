@@ -11,7 +11,7 @@ const comment = {
     text: 'I hope you enjoy learning React!',
     author: {
         name: 'Mr Kitty',
-        id: '/home',
+        id: '/profile',
         avatarUrl: 'https://placekitten.com/g/64/64',
     },
     action: {
@@ -22,7 +22,7 @@ const comment = {
 class Header extends Component {
     render() {
         return (
-            <header className="header-layer _dark">
+            <header className="top-bar _fixed _dark">
                 <div className="header-line">
                     <Link to="/" className="logo">Friends</Link>
                     <UserCard user={comment.author} eventCounter={comment.action}/>

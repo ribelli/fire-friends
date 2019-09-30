@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 
 import './style/home.scss';
+import InterestsPersonalGraph from "../../components/interests-personal-graph";
 import Main from "../../components/main";
 // import logo from '../../assets/logo.png';
 
@@ -20,7 +21,8 @@ class HomePage extends Component {
     };
 
     componentDidUpdate() {
-        // Following will fetch the users notes. In componentDidMount the token is not set and therefore a local state is needed to check initialData
+        // Following will fetch the users notes. In componentDidMount the token
+        // is not set and therefore a local state is needed to check initialData
         if (!this.state.initialData) {
             this.setState({
                 initialData: true
@@ -30,11 +32,12 @@ class HomePage extends Component {
 
     render() {
         return (
-            <main className='home-page-container'>
+            <div className='home-page-container'>
                 <div>
+                    <InterestsPersonalGraph />
                     <Main/>
                 </div>
-            </main>
+            </div>
         );
     };
 }

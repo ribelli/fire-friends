@@ -1,0 +1,66 @@
+.interest-graph {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid #ddd;
+  border-top: 0;
+
+  &__item {
+    height: 15px;
+  }
+
+  &__description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0;
+
+    .list-info {
+      font-weight: 500;
+      padding: 10px 5px;
+      text-align: center;
+      white-space: nowrap;
+
+      & > a {
+        color: #333333;
+        text-decoration: none;
+      }
+
+      .pick {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+
+      .item {
+        padding: 0 5px;
+      }
+      .percent {
+        color: #828282;
+      }
+    }
+
+  }
+}
+details {
+  border-bottom: solid 1px #e2e2e2;
+
+  summary {
+    display: list-item;
+    list-style: none;
+
+    &::-webkit-details-marker {
+      display:none;
+    }
+  }
+}

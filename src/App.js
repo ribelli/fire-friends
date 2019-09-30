@@ -9,13 +9,13 @@ class App extends Component {
     render() {
         console.log(this.props.children);
         return (
-            <main className="app">
-                <section className="main-layer">
-                    <Header/>
+            <div className="app">
+                <Header/>
+                <main className="main-layer">
                     {this.props.children}
-                    <Footer/>
-                </section>
-            </main>
+                </main>
+                <Footer/>
+            </div>
         );
     }
 }
