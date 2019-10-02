@@ -25,7 +25,7 @@ class ChatView extends Component {
         const isCurrentUser = user.id === currentUser.id;
         let props = {
             user,
-            text: text,
+            text,
             date,
             isCurrentUser
         };

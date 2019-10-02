@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Send } from 'react-feather';
 import './style/index.scss';
 
 const placeholderValue = 'Write a message...';
@@ -27,9 +28,10 @@ class InputArea extends Component {
     };
 
     onFormSubmit = () => {
-        if (!(/\S/.test(this.state.text))) {
-            return false;
-        }
+        if (this.state.text.trim() === '') return;
+        // if (!(/\S/.test(this.state.text))) {
+        //     return false;
+        // }
         this.props.onSendMessage(this.state.text);
         this.setState({text: ''});
     };
@@ -44,7 +46,9 @@ class InputArea extends Component {
                           value={this.state.text}
                           placeholder={placeholderValue}
                           rows={3} tabIndex="5" spellCheck="true" />
-                    <button type="Submit">Send</button>
+                    <button type="Submit">
+                        <Send size='30'/>
+                    </button>
                 </form>
             </section>
         );

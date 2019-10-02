@@ -1,0 +1,12 @@
+.favorite-user-container {
+  min-width: 180px;
+  background-color: #FBFEF9;
+  border-radius: 5px;
+  padding: 8px 0;
+  margin: 5px 10px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+
+  & a {
+    text-decoration: none;
+  }
+}

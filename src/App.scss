@@ -1,14 +1,16 @@
 
 .app {
-  text-align: center;
   height: 100%;
+  color: #494a4d;
+  text-align: center;
+  overflow: auto; //?
   //font-family: 'Georgia', serif;
-  color: #494a4d;;
 
   .main-layer {
-    background-color: #FBFEF9;
-    padding-top: 80px;
-    height: inherit;
+    //background-color: #FBFEF9;
+    // overflow: auto; //?
+    height: auto;
+    padding-top: 48px;
   }
 }
 

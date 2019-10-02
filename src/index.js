@@ -11,6 +11,7 @@ import MessagesPage from "./routes/messages/messages";
 // import LoginPage from './routes/login/login.js';
 import * as serviceWorker from './serviceWorker';
 import ProfilePage from "./routes/profile/profile";
+import FavoritesPage from "./routes/favorites/favorites";
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -20,6 +21,7 @@ ReactDOM.render(
             <Switch>
                 <App>
                     <Route exact path='/profile' component={ProfilePage} />
+                    <Route exact path='/favorites' component={FavoritesPage} />
                     {/*<Route exact path='/login' component={LoginPage} />*/}
                     {/*<Route exact path='/registration/token' component={RegistrationTokenPage} />*/}
                     {/*<Route exact path='/registration/validation' component={RegistrationValidationPage} />*/}

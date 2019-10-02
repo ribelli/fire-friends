@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-
-import './style/home.scss';
 import InterestsPersonalGraph from "../../components/interests-personal-graph";
 import Main from "../../components/main";
-// import logo from '../../assets/logo.png';
+import './style/home.scss';
 
 class HomePage extends Component {
     state = {

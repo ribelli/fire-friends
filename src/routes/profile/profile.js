@@ -1,32 +1,46 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-// import './style/index.scss';
+import Avatar from "../../components/avatar";
+import ProfileStatus from "../../components/profile-status";
+
+import './style/index.scss';
+import InterestsPersonalGraph from "../../components/interests-personal-graph";
+
+const user = {
+    date: new Date(),
+    text: 'enjoy! azaza',
+    author: {
+        name: 'Mr Kitty',
+        id: '/profile',
+        avatarUrl: 'https://placekitten.com/g/64/64',
+    },
+    action: {
+        eventValue: 6,
+    },
+};
 
 class ProfilePage extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            // user: DUMMY_DATA.user,
-            value: ''
-        }
-    }
-
-    componentDidMount() {
-        this.clearState();
-    };
-
-    clearState = () => {
-        this.setState({
-            value: ''
-        });
-    };
 
     render() {
+        let isDefaultSize = true;
+
         return (
             <div className='profile-page'>
                 <div className='user-info-block'>
-                    Profile
+                    Profile page
+                    <div className='user-layout'>
+                        <div className="avatar-container">
+                            <Link to="/settings" aria-label="Go to Settings" title="Go to Settings">
+                                <Avatar user={user.author} isDefaultSize={isDefaultSize} />
+                            </Link>
+                            <div>{user.author.name}</div>
+                            <ProfileStatus/>
+                        </div>
+                        <div className='common-info-container'>
+                            <InterestsPersonalGraph />
+                        </div>
+                    </div>
                 </div>
             </div>
         );

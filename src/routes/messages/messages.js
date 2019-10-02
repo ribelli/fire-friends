@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 
 import './style/index.scss';
 import ChatView from "../../components/chat-view";
 import InputArea from "../../components/input-area";
-// import logo from '../../assets/logo.png';
 
 const doggyUrl = 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg';
 const arrayUsers = ['Хороший мальчик', 'Пушистый засранец'];

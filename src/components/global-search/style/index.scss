@@ -1,0 +1,28 @@
+.input-container {
+  position: relative;
+
+  .global-search {
+    width: 30vw;
+    height: 7px;
+    color: white;
+    font-size: 14px;
+    padding: 12px;
+    margin: auto;
+    background: #8a8a8a;
+    border: none;
+
+    &::-webkit-input-placeholder {
+      color: #FBFEF9;
+    }
+  }
+
+  .icon-search {
+    position: absolute;
+    right: 0;
+    margin: 5px;
+  }
+}
+
+.results-container {
+  position: absolute;
+}

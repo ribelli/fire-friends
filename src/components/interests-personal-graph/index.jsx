@@ -19,6 +19,7 @@ class InterestsPersonalGraph extends Component {
     static renderColors(interest, i) {
         return(
             <span className="interest-graph__item"
+                  title={interest}
                   style={{backgroundColor: arrColors[i], width: arrWidths[i]+'%'}}
                   aria-label={interest} />
         )

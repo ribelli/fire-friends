@@ -1,0 +1,25 @@
+.profile-page {
+  .user-info-block {
+
+    .user-layout {
+      display: flex;
+      padding-top: 15px;
+    }
+
+    .avatar-container {
+      width: 200px;
+      height: 200px;
+      margin: 0 10px;
+      border: 1px solid;
+
+      .user-avatar {
+        margin: 15px;
+      }
+    }
+
+    .common-info-container {
+      width: 65%;
+      padding: 0 15px;
+    }
+  }
+}

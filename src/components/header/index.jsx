@@ -3,6 +3,7 @@ import './style/index.scss';
 import UserCard from "../user-card";
 import CommonMenu from "../common-menu";
 import { Link } from 'react-router-dom';
+import GlobalSearch from "../global-search";
 // import Avatar from "../avatar";
 // import EventCounter from  "../event-counter";
 
@@ -25,9 +26,10 @@ class Header extends Component {
             <header className="top-bar _fixed _dark">
                 <div className="header-line">
                     <Link to="/" className="logo">Friends</Link>
+                    <CommonMenu/>
+                    <GlobalSearch/>
                     <UserCard user={comment.author} eventCounter={comment.action}/>
                 </div>
-                <CommonMenu/>
             </header>
         );
     }

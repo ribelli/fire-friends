@@ -1,13 +1,28 @@
+$defaultGreyColor: #828282;
+$defaultColorOnHover: #00e3a6;
+
 .user-avatar {
-  width: 33px;
-  height: 33px;
-  border: 2px solid white;
   box-sizing: border-box;
-  margin-right: 10px;
 
   &:hover {
-    border-color: #00e3a6;
     cursor: pointer;
+  }
+
+  &._middle {
+    width: 110px;
+    height: 110px;
+    border: 1px solid $defaultGreyColor;
+  }
+
+  &._mini {
+    width: 33px;
+    height: 33px;
+    border: 2px solid white;
+    margin-right: 10px;
+
+    &:hover {
+      border-color: #00e3a6;
+    }
   }
 
   &._rounded {

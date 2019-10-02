@@ -1,0 +1,9 @@
+.profile-status {
+  display: flex;
+  margin: 0 10px;
+  border: 1px solid;
+
+  &__text {
+    margin-left: 10px;
+  }
+}
