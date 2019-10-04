@@ -1,5 +1,7 @@
 .message-page-container {
   height: calc(100% - 115px);
+  position: absolute;
+  width: 100%;
 
   @media (max-width: 768px) {
     font-size: calc(10px + 2vmin);

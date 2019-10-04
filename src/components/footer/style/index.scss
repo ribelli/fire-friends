@@ -1,4 +1,19 @@
 .footer-layer {
-  background-color: #282c34;
-  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 100;
+  padding: 5px 20px;
+
+  &._dark {
+    color: #8a8a8a;
+    background-color: #282c34;
+  }
+
+  &__info-block {
+    & > a {
+      text-decoration: none;
+      color: #8a8a8a;
+      padding: 0 20px;
+    }
+  }
 }

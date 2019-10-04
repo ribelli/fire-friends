@@ -8,7 +8,7 @@ const favorites = {
         userName: 'Carlo228',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 27,
-        country: 'Spain',
+        country: 'SP',
         city: 'Madrid'
     },
     user2: {
@@ -16,7 +16,7 @@ const favorites = {
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'Finland',
+        country: 'FI',
         city: 'Helsinki'
     },
     user3: {
@@ -24,15 +24,15 @@ const favorites = {
         userName: 'FuckDogs',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'Everywhere',
-        city: 'Tvoya mamka'
+        country: 'RU',
+        city: 'Saint Petersburg'
     },
     user4: {
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'Finland',
+        country: 'FI',
         city: 'Helsinki'
     },
     user5: {
@@ -40,15 +40,15 @@ const favorites = {
         userName: 'FuckDogs',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'Everywhere',
-        city: 'Tvoya mamka'
+        country: 'RU',
+        city: 'Saint Petersburg'
     },
     user6: {
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'Finland',
+        country: 'FI',
         city: 'Helsinki'
     },
     user7: {
@@ -56,15 +56,15 @@ const favorites = {
         userName: 'FuckDogs',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'Everywhere',
-        city: 'Tvoya mamka'
+        country: 'RU',
+        city: 'Saint Petersburg'
     },
     user8: {
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'Finland',
+        country: 'FI',
         city: 'Helsinki'
     },
     user9: {
@@ -72,15 +72,15 @@ const favorites = {
         userName: 'FuckDogs',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'Everywhere',
-        city: 'Tvoya mamka'
+        country: 'RU',
+        city: 'Saint Petersburg'
     },
     user10: {
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'Finland',
+        country: 'FI',
         city: 'Helsinki'
     },
     user11: {
@@ -88,8 +88,8 @@ const favorites = {
         userName: 'FuckDogs',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'Everywhere',
-        city: 'Tvoya mamka'
+        country: 'RU',
+        city: 'Saint Petersburg'
     },
 };
 

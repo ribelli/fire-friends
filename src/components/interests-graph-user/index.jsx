@@ -28,7 +28,7 @@ class InterestsGraphUser extends Component {
 
     render() {
         return (
-            <div className='interest-graph'>
+            <div className='interest-graph _mini'>
                 {interests.map((interest, i) => InterestsGraphUser.renderColors(interest, i))}
             </div>
         );

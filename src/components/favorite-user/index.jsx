@@ -9,20 +9,29 @@ class FavoriteUser extends Component {
 
         return (
             <div className='favorite-user-container'>
-                <Link to={this.props.userName}>
-                    <Avatar user={this.props} isDefaultSize={true} />
+                <div>
+                    <Link to={this.props.userName}>
+                        <Avatar user={this.props} isDefaultSize={true} />
+                    </Link>
+                </div>
+                <div className='general-info'>
+                    <div className='general-info__name'>{this.props.name}, </div>
+                    <div className='general-info__age'>{this.props.age}</div>
+                </div>
+                <Link to={this.props.userName}
+                      className='username'>
+                    {this.props.userName}
                 </Link>
-                <div className='name'>{this.props.name}</div>
-                <div className='username'>
-                    <Link to={this.props.userName}>{this.props.userName}</Link>
-                </div>
-                <div className='age'>{this.props.age}</div>
                 <InterestsGraphUser/>
-                <div className='country'>
-                    <Link to={this.props.country}>{this.props.country}</Link>
-                </div>
-                <div className='city'>
-                    <Link to={`${'statistics\\'}` + this.props.city}>{this.props.city}</Link>
+                <div className='location-info'>
+                    <Link to={this.props.country}
+                          className='location-info__country'>
+                        {this.props.country}:
+                    </Link>
+                    <Link to={`${'statistics\\'}` + this.props.city}
+                          className='location-info__city'>
+                        {this.props.city}
+                    </Link>
                 </div>
             </div>
         )

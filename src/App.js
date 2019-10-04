@@ -7,14 +7,16 @@ import './App.scss';
 
 class App extends Component {
     render() {
-        console.log(this.props.children);
+
+        const isShowFooter = this.props.location.pathname === '/messages';
+
         return (
             <div className="app">
                 <Header/>
                 <main className="main-layer">
                     {this.props.children}
                 </main>
-                <Footer/>
+                <Footer isShowFooter={isShowFooter}/>
             </div>
         );
     }
