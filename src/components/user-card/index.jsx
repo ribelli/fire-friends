@@ -3,6 +3,7 @@ import Avatar from "../avatar";
 import UserInfo from "../user-info";
 import './style/index.scss'
 import EventCounter from "../event-counter";
+import {Link} from "react-router-dom";
 
 class UserCard extends Component {
 
@@ -12,7 +13,9 @@ class UserCard extends Component {
         return (
             <div className="user-card">
                 <div className="avatar-layer">
-                    <Avatar user={this.props.user} isDefaultSize={isDefaultSize} />
+                    <Link to='/profile'>
+                        <Avatar user={this.props.user} isDefaultSize={isDefaultSize} />
+                    </Link>
                     <EventCounter eventCounter={this.props.eventCounter}/>
                 </div>
                 <UserInfo user={this.props.user}/>
