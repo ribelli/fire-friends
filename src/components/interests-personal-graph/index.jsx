@@ -19,6 +19,7 @@ class InterestsPersonalGraph extends Component {
     static renderColors(interest, i) {
         return(
             <span className="interest-graph__item"
+                  key={i}
                   title={interest}
                   style={{backgroundColor: arrColors[i], width: arrWidths[i]+'%'}}
                   aria-label={interest} />
@@ -26,7 +27,7 @@ class InterestsPersonalGraph extends Component {
     }
     static renderPercent(interest, i) {
         return(
-            <li className="list-info">
+            <li className="list-info" key={i}>
                 <Link to={interest}>
                     <span className="pick" style={{backgroundColor: arrColors[i]}} />
                     <span className="item">{interest}</span>
