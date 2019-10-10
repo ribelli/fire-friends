@@ -14,6 +14,7 @@ import ProfilePage from "./routes/profile/profile";
 import FavoritesPage from "./routes/favorites/favorites";
 import SettingsPage from "./routes/settings/settings";
 import GroupsPage from "./routes/groups/groups";
+import GroupPage from "./routes/group-page/group";
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -26,6 +27,7 @@ ReactDOM.render(
                     <Route exact path='/favorites' component={FavoritesPage} />
                     <Route exact path='/settings' component={SettingsPage} />
                     <Route exact path='/groups' component={GroupsPage} />
+                    <Route exact path='/groups/:id' component={GroupPage}/>
                     {/*<Route exact path='/login' component={LoginPage} />*/}
                     {/*<Route exact path='/registration/token' component={RegistrationTokenPage} />*/}
                     {/*<Route exact path='/registration/validation' component={RegistrationValidationPage} />*/}

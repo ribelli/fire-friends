@@ -20,6 +20,7 @@ class InterestsGraphUser extends Component {
         let percentValue = arrWidths[i]+'%';
         return(
             <span className="interest-graph__item"
+                  key={i}
                   title={interest + ' ' + percentValue}
                   style={{backgroundColor: arrColors[i], width: percentValue}}
                   aria-label={interest} />

@@ -1,22 +1,81 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 
-import InterestsPersonalGraph from "../../components/interests-personal-graph";
 import './style/index.scss';
+import GroupItem from "../../components/group-item";
 
-const groups = {
-    date: new Date(),
-    text: 'enjoy! azaza',
-    name: 'English light',
-    author: {
-        name: 'Mr Kitty',
-        id: '/profile',
-        avatarUrl: 'https://placekitten.com/g/64/64',
+const groups = [
+    {
+        id: 1488,
+        name: 'English light',
+        userValue: '1488',
+        text: 'enjoy! azaza',
+        author: {
+            name: 'Mr Kitty',
+            id: '/profile',
+            avatarUrl: 'https://placekitten.com/g/64/64',
+        },
+        interestsGraph: {
+
+        }
     },
-    action: {
-        eventValue: 6,
+    {
+        id: 148,
+        name: 'PC BOYARE TYT',
+        userValue: '228',
+        text: 'LOL',
+        author: {
+            name: 'Mr Kitty',
+            id: '/profile',
+            avatarUrl: 'https://placekitten.com/g/64/64',
+        },
+        interestsGraph: {
+
+        }
     },
-};
+    {
+        id: 88,
+        name: 'Shelter for kitties',
+        userValue: '146',
+        text: 'This group for strangers who loves furry pussies from hell',
+        author: {
+            name: 'Mr Kitty',
+            id: '/profile',
+            avatarUrl: 'https://placekitten.com/g/64/64',
+        },
+        interestsGraph: {
+
+        }
+    },
+    {
+        id: 14,
+        name: 'Shelter for woof-seniors',
+        userValue: '1488',
+        text: 'This group for greatest people our planet. For awesome people',
+        author: {
+            name: 'Mr Kitty',
+            id: '/profile',
+            avatarUrl: 'https://placekitten.com/g/64/64',
+        },
+        interestsGraph: {
+            'sports': {
+                color: '#333555',
+                percent: 32,
+                inner : {
+                    'mtb': 87,
+                    'fixed-gear': 13
+                }
+            },
+            'books': {
+                color: '#af5da4',
+                percent: 22,
+                inner : {
+                    'non-fiction': 100
+                }
+            }
+        }
+    }
+];
 
 class GroupsPage extends Component {
 
@@ -26,12 +85,7 @@ class GroupsPage extends Component {
                 <div className='group-info-block'>
                     Groups page
                     <div className='group-layout'>
-                        <div className="avatar-container">
-                            <div>{groups.name}</div>
-                        </div>
-                        <div className='common-info-container'>
-                            <InterestsPersonalGraph />
-                        </div>
+                        <GroupItem groups={groups} />
                     </div>
                 </div>
             </div>
