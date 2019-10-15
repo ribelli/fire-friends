@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
-import './style/index.scss';
-
 class GroupPage extends Component {
 
     render() {
-        console.warn(this.refs)
         return (
             <div className='groups-page'>
                 <div className='group-info-block'>

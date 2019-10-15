@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
 import './style/index.scss';
 import { Search } from 'react-feather';
-import Suggestions from "../suggestions";
+import Suggestions from '../suggestions';
 
 class GlobalSearch extends Component {
     state = {
@@ -25,26 +26,26 @@ class GlobalSearch extends Component {
     //     axios.get(`${API_URL}?api_key=${API_KEY}&prefix=${this.state.query}&limit=7`)
     //         .then(({ data }) => {
     //             this.setState({
-    //                 results: data.data // MusicGraph returns an object named data,
-    //                                    // as does axios. So... data.data
+    //                 results: data.data
+    //                // as does axios. So... data.data
     //             })
     //         })
     // }
 
     render(){
-        const inputPlaceholder = 'Search new friends by location';
+        const { t } = this.props;
         return(
             <form>
                 <div className='input-container'>
-                    <input className='global-search' type='search'
-                           spellCheck={false}
-                           ref={input => this.search = input}
-                           onChange={this.handleInputChange}
-                           placeholder={inputPlaceholder}
-                           autoComplete='off'/>
-                    <span className='icon-search'>
-                        <Search size={15}/>
-                    </span>
+                        <input className='global-search' type='search'
+                               spellCheck={false}
+                               ref={input => this.search = input}
+                               onChange={this.handleInputChange}
+                               placeholder={t('main.searchQuery')}
+                               autoComplete='off'/>
+                        <span className='icon-search'>
+                            <Search size={15}/>
+                        </span>
                 </div>
                 <div className='results-container'>
                     <Suggestions results={this.state.results} />
@@ -54,4 +55,4 @@ class GlobalSearch extends Component {
     }
 }
 
-export default GlobalSearch;
+export default withTranslation()(GlobalSearch);

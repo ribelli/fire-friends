@@ -1,40 +1,55 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import store from './store/store.js';
-import App from './App';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ReactDOM from 'react-dom';
+import store from './store/store.js';
 
-import HomePage from './routes/home/home.js';
-import MessagesPage from "./routes/messages/messages";
-// import LoginPage from './routes/login/login.js';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './index.scss';
+
+import './i18n';
+
+import App from './App';
+import HomePage from './routes/home';
+import MessagesPage from "./routes/messages";
+
+import AuthenticationRequired from './high-order-component';
+
 import * as serviceWorker from './serviceWorker';
-import ProfilePage from "./routes/profile/profile";
-import FavoritesPage from "./routes/favorites/favorites";
+
+import GroupPage from "./routes/group-page";
+import GroupsPage from "./routes/groups";
+import FavoritesPage from "./routes/favorites";
+import LoginPage from "./routes/login";
+import ProfilePage from "./routes/profile";
+import RegistrationPage from "./routes/registration-validation";
+import RegistrationTokenPage from "./routes/registration-token";
 import SettingsPage from "./routes/settings/settings";
-import GroupsPage from "./routes/groups/groups";
-import GroupPage from "./routes/group-page/group";
-import LoginPage from "./routes/login/login";
+import { storeTokenAction } from "./store/actions/authentication-actions";
 
 // ReactDOM.render(<App />, document.getElementById('root'));
+
+const token = localStorage.getItem('token');
+if (token) {
+    store.dispatch(storeTokenAction(token));
+}
+
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
                 <App>
-                    <Route exact path='/profile' component={ProfilePage} />
-                    <Route exact path='/favorites' component={FavoritesPage} />
-                    <Route exact path='/settings' component={SettingsPage} />
+                    <Route exact path='/' component={HomePage}/>
+                    <Route exact path='/profile' component={AuthenticationRequired(ProfilePage)} />
+                    <Route exact path='/favorites' component={AuthenticationRequired(FavoritesPage)} />
+                    <Route exact path='/settings' component={AuthenticationRequired(SettingsPage)} />
                     <Route exact path='/groups' component={GroupsPage} />
                     <Route exact path='/groups/:id' component={GroupPage}/>
                     <Route exact path='/login' component={LoginPage} />
-                    {/*<Route exact path='/registration/token' component={RegistrationTokenPage} />*/}
-                    {/*<Route exact path='/registration/validation' component={RegistrationValidationPage} />*/}
+                    <Route exact path='/registration/token' component={RegistrationTokenPage} />
+                    <Route exact path='/messages' component={AuthenticationRequired(MessagesPage)}/>
+                    <Route exact path='/registration' component={RegistrationPage} />
                     {/*<Route exact path='/reset/password' component={ResetPasswordPage} />*/}
-                    <Route exact path='/' component={HomePage}/>
-                    <Route exact path='/messages' component={MessagesPage}/>
                     {/*<Route exact path='/note/:id' component={AuthenticationRequired(NotePage)}/>*/}
                 </App>
             </Switch>

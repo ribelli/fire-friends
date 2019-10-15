@@ -18,7 +18,6 @@ class ProfileStatus extends Component {
 
     addEmoji = (emoji) =>{
         const text = `${emoji.native}`;
-        console.log(text);
 
         this.setState({
             newMessage: text,

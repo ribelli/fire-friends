@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './style/index.scss';
 import FavoriteUser from "../../components/favorite-user";
 
-const favorites = {
+const index = {
     user1: {
         name: 'Carlo',
         userName: 'Carlo228',
@@ -115,7 +115,6 @@ class FavoritesPage extends Component {
     };
 
     static renderFavorites(favorite, index) {
-        console.log(favorite, index);
         const {avatarUrl, name, userName, age, country, city} = favorite;
         let props = {
             avatarUrl,
@@ -135,7 +134,7 @@ class FavoritesPage extends Component {
                     Favorites
                 </div>
                 <div className='favorite-layout'>
-                    {Object.values(favorites).map((favorite, i) =>
+                    {Object.values(index).map((favorite, i) =>
                         FavoritesPage.renderFavorites(favorite, i))}
                 </div>
             </div>

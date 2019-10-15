@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 
-import './style/index.scss';
 import GroupItem from "../../components/group-item";
 
-const groups = [
+const index = [
     {
         id: 1488,
         name: 'English light',
@@ -85,7 +84,7 @@ class GroupsPage extends Component {
                 <div className='group-info-block'>
                     Groups page
                     <div className='group-layout'>
-                        <GroupItem groups={groups} />
+                        <GroupItem groups={index} />
                     </div>
                 </div>
             </div>

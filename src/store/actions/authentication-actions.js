@@ -1,7 +1,5 @@
-
 import { STORE_TOKEN, REMOVE_TOKEN } from '../types/types.js';
-import {AxiosInstance as axios} from "axios";
-
+import axios from '../../axios';
 
 export const storeTokenAction = (accessToken, refreshToken) => {
     return {
@@ -23,20 +21,39 @@ export const userLogoutAction = () => {
     };
 };
 
+const config = {
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Access-Control-Allow-Origin': '*',
+    }
+};
+
+// This is for non-JSON cases
+// const encodeForm = (data) => {
+//     return Object.keys(data)
+//         .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+//         .join('&');
+// };
+
 export const  userLoginAction = (username, password) => (dispatch, getState) => {
-    return axios.post('api/auth/token/', { username, password })
+    let formData = {username, password};
+    return axios.post('/users/login', formData, config)
         .then(response => {
-            dispatch(storeTokenAction(response.data.access, response.data.refresh));
-            localStorage.setItem('token', JSON.stringify(response.data.access));
+            console.log(response.data.token);
+            dispatch(storeTokenAction(response.data.token, response.data.refresh));
+            localStorage.setItem('token', JSON.stringify(response.data.token));
             return response.data;
         })
         .catch(error => console.log('error', error));
 };
 
-export const userRegistrationAction = email => (dispatch, getState) => {
-    return axios.post('api/registration/', { email })
+export const userRegistrationAction = (username, first_name, last_name, password, email) => (dispatch, getState) => {
+    let formData = {username, first_name, last_name, password, email};
+    console.log(formData)
+
+    return axios.post('users/register', formData, config)
         .then(response => {
-            return response;
+            return (response);
         }).catch(error => console.log('ERROR', error));
 };
 

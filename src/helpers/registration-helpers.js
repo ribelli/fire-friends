@@ -7,7 +7,7 @@ export const validateEmail = email => {
 };
 
 export const validateIdenticalPasswords = (password, password_repeat) => {
-    let checkPassword = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/
+    let checkPassword = /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d)(?=.*[!#$%&? "]).*$/;
     /*
     ^.*              : Start
     (?=.{8,})        : Length
@@ -25,9 +25,9 @@ export const validateIdenticalPasswords = (password, password_repeat) => {
 };
 
 export const validateLogin = credentials => {
-    let email = credentials.email ? true : false;
-    let password = credentials.password ? true : false;
-    let validated_credentials = email && password ? true : false;
+    let email = !!credentials.email;
+    let password = !!credentials.password;
+    let validated_credentials = email && password;
     let check = {
         email,
         password,
@@ -37,24 +37,24 @@ export const validateLogin = credentials => {
 };
 
 export const validateResetPasswordInput = user_input => {
-    const validated_passwords = validateIdenticalPasswords(user_input.password, user_input.password_repeat);
+    const validated_passwords = true; //validateIdenticalPasswords(user_input.password, user_input.password_repeat);
     let validated_data = {
         email: user_input.email === '' ? false : true,
         token: user_input.token === '' ? false : true,
-        password_valid: validated_passwords.valid,
-        passwords_identical: validated_passwords.identical
+        //password_valid: validated_passwords.valid,
+        //passwords_identical: validated_passwords.identical
     };
     return validated_data;
 };
 
 export const validateRegistrationValidation = user_input => {
-    const validated_passwords = validateIdenticalPasswords(user_input.password, user_input.password_repeat);
+    const validated_passwords = true;  validateIdenticalPasswords(user_input.password, user_input.password_repeat);
     let validated_data = {
         email: user_input.email === '' ? false : true,
         username: user_input.username === '' ? false : true,
-        token: user_input.token === '' ? false : true,
-        password_valid: validated_passwords.valid,
-        passwords_identical: validated_passwords.identical
+        // token: user_input.token === '' ? false : true,
+        //password_valid: validated_passwords.valid,
+        //passwords_identical: validated_passwords.identical
     };
     return validated_data;
 };

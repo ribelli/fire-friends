@@ -1,0 +1,18 @@
+{
+  "main": {
+    "greeting": "Hello",
+    "messages": "Messages",
+    "favorites": "Favorites",
+    "searchQuery": "Search new friends by location",
+    "bottomLinks": {
+      "about": "About",
+      "privacy": "Privacy & Terms"
+    },
+    "registration": {
+      "login": "login",
+      "nonRegistered": "Not registered?",
+      "createAccount": "Create an account",
+      "forgotPassword": "Forgot password?"
+    }
+  }
+}

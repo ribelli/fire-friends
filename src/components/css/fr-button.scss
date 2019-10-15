@@ -1,0 +1,28 @@
+
+.fr-button {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: 0;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+
+  &._bordered {
+    border: 4px solid #00e3a6;
+  }
+
+  &._dark {
+    color: #FFFFFF;
+    background: #282c34;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: #3b1a62;
+    }
+  }
+}

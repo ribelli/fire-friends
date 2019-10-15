@@ -6,6 +6,7 @@ import './style/index.scss';
 
 import { userLoginAction } from '../../store/actions/authentication-actions.js';
 import { validateLogin } from '../../helpers/registration-helpers.js';
+//import { withTranslation } from "react-i18next";
 
 
 class LoginRegistrationForm extends Component {
@@ -73,6 +74,8 @@ class LoginRegistrationForm extends Component {
     };
 
     render() {
+        const { t } = this.props;
+
         return (
             <form className='login-form' onSubmit={this.onSubmitHandler} >
                 <p className='invalid-format'>
@@ -97,10 +100,10 @@ class LoginRegistrationForm extends Component {
                 <p className='invalid-format'>
                     {this.state.invalidCredentials ? 'The entered credentials are invalid' : ''}
                 </p>
-                <button className='login-form__button'>login</button>
+                <button className='fr-button _dark _bordered'>login</button>
                 <div className='login-alternatives-container'>
                     <p className='message'>
-                        Not registered? <span onClick={() => this.redirectHandler('registration')} >
+                        {/*{t('main.registration.nonRegistered')}*/}Not registered? <span onClick={() => this.redirectHandler('registration')} >
                         Create an account</span>
                     </p>
                     {
@@ -119,7 +122,7 @@ class LoginRegistrationForm extends Component {
 
 const mapStateToProps = state => {
     return {
-        // auth: state.authenticationReducer.authenticated
+        auth: state.authenticationReducer.authenticated
     };
 };
 

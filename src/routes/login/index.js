@@ -11,6 +11,6 @@ class LoginPage extends Component {
             </div>
         );
     };
-};
+}
 
 export default LoginPage;

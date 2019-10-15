@@ -9,8 +9,7 @@ class HomePage extends Component {
     };
 
     componentDidMount() {
-        console.log(this.props.notes);
-        if (this.props.notes) {
+        if (this.props) {
             this.setState({
                 initialData: true
             });

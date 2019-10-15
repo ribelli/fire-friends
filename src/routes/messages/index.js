@@ -88,7 +88,6 @@ class MessagesPage extends Component {
         });
         this.connection.send(text);
         this.setState({text});
-        console.log(this.state.messages)
     };
 
     render() {

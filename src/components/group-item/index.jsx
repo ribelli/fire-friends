@@ -24,7 +24,6 @@ class GroupItem extends Component {
 
     render() {
 
-        console.log(this.props.groups);
         return (
             <div className="group-card">
                 <div className="group-layer">

@@ -1,0 +1,18 @@
+{
+  "main": {
+    "greeting": "Привет",
+    "messages": "Сообщения",
+    "favorites": "Избранные",
+    "searchQuery": "Найти новых друзей рядом",
+    "bottomLinks": {
+      "about": "About",
+      "privacy": "Privacy & Terms"
+    },
+    "registration": {
+      "login": "войти",
+      "nonRegistered": "Не зарегистрированы?",
+      "createAccount": "Создать аккаунт",
+      "forgotPassword": "Забыли пароль?"
+    }
+  }
+}
