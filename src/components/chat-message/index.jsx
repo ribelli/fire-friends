@@ -5,7 +5,7 @@ class ChatMessage extends Component {
 
     render() {
         const className = this.props.isCurrentUser ?
-            "message-layer currentMember" : "message-layer";
+            "message-layer current-member" : "message-layer";
         return(
             <li className={className} key={this.props.message} style={{whiteSpace: 'pre-line'}}>
                 <span
@@ -15,11 +15,11 @@ class ChatMessage extends Component {
                 />
                 <div className="message-layer__box">
                     <div className="message-layer__date-info">{this.props.date}</div>
-                    <div className="message-layer__sender-info">
-                        {this.props.user.username}
-                    </div>
-                    <div className="message-layer__message"
+                    <div className="message-layer__c-message"
                          style={{backgroundColor:this.props.user.color}}>
+                        <div className="sender-info">
+                            {this.props.user.username}
+                        </div>
                         {this.props.text}
                     </div>
                 </div>

@@ -1,0 +1,24 @@
+$classicLightGrey: #464646;
+
+.chat-container {
+  height: 100%;
+
+  .chat-view {
+    height: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    list-style-type: none;
+    padding: 10px;
+    margin: 0 auto;
+    overflow-y: scroll;
+  }
+
+  .respondent-view {
+    font-size: 14px;
+    color: #efefef;
+    background-color: #333333;
+    border-top: 1px solid $classicLightGrey;
+  }
+}

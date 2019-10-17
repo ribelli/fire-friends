@@ -1,17 +1,15 @@
 import React, {Component, Suspense} from 'react';
-import LoginForm from '../../components/login-form';
 
-
-class LoginPage extends Component {
+class AboutPage extends Component {
     render() {
         return (
-            <div className='login-page'>
+            <div className='about-page'>
                 <Suspense fallback='loading'>
-                    <LoginForm />
+                    <div>About this project</div>
                 </Suspense>
             </div>
         );
     };
 }
 
-export default LoginPage;
+export default AboutPage;

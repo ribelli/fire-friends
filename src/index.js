@@ -25,6 +25,7 @@ import RegistrationPage from "./routes/registration-validation";
 import RegistrationTokenPage from "./routes/registration-token";
 import SettingsPage from "./routes/settings/settings";
 import { storeTokenAction } from "./store/actions/authentication-actions";
+import AboutPage from "./routes/about";
 
 // ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -49,6 +50,7 @@ ReactDOM.render(
                     <Route exact path='/registration/token' component={RegistrationTokenPage} />
                     <Route exact path='/messages' component={AuthenticationRequired(MessagesPage)}/>
                     <Route exact path='/registration' component={RegistrationPage} />
+                    <Route exact path='/about' component={AboutPage} />
                     {/*<Route exact path='/reset/password' component={ResetPasswordPage} />*/}
                     {/*<Route exact path='/note/:id' component={AuthenticationRequired(NotePage)}/>*/}
                 </App>

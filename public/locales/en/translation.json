@@ -10,9 +10,20 @@
     },
     "registration": {
       "login": "login",
+      "register": "register",
       "nonRegistered": "Not registered?",
+      "existingUser": "Already registered?",
+      "passwordRules": "Password must contain a letter, digit, special character and have a length of 8 characters",
       "createAccount": "Create an account",
-      "forgotPassword": "Forgot password?"
+      "forgotPassword": "Forgot password?",
+      "usernameRequired": "Please enter your username",
+      "passwordRequired": "Please enter your password",
+      "emailRequired": "Please enter your email address",
+      "wrongRepeatPasswords": "The passwords do not match",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "password": "password",
+      "username": "username"
     }
   }
 }

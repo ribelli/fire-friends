@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const LanguageSelect = () => {
 
-    const { i18n, t } = useTranslation();
+    const { i18n } = useTranslation();
 
     function changeLanguage(lng) {
         i18n.changeLanguage(lng);

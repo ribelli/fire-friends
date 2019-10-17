@@ -12,7 +12,7 @@ export default ChildComponent => {
             this.redirectUser();
         };
 
-        componentWillUpdate(nextProps) {
+        getSnapshotBeforeUpdate(nextProps) {
             if (!nextProps.auth) {
                 this.redirectUser();
             }

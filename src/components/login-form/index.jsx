@@ -6,7 +6,8 @@ import './style/index.scss';
 
 import { userLoginAction } from '../../store/actions/authentication-actions.js';
 import { validateLogin } from '../../helpers/registration-helpers.js';
-//import { withTranslation } from "react-i18next";
+import { withTranslation } from 'react-i18next';
+
 
 
 class LoginRegistrationForm extends Component {
@@ -65,55 +66,56 @@ class LoginRegistrationForm extends Component {
 
     redirectHandler = to => {
         if (to === 'registration') {
-            this.props.history.push('/registration/token');
+            this.props.history.push('/registration');
         } else if (to === 'resetPassword') {
-            this.props.history.push('/reset/token');
+            this.props.history.push('/reset/password');
         } else {
             this.props.history.push('/login');
         }
     };
 
     render() {
-        const { t } = this.props;
+        const {t} = this.props;
 
         return (
             <form className='login-form' onSubmit={this.onSubmitHandler} >
-                <p className='invalid-format'>
-                    {this.state.invalidEmail ? 'Please enter your username' : ''}
-                </p>
+                {this.state.invalidEmail ?
+                    <p className='invalid-format'>
+                        {t('main.registration.usernameRequired')}
+                    </p> : ''}
                 <input type='text'
                        className='login-form__input'
                        name='email'
-                       placeholder='username*'
+                       title={t('main.registration.username')}
+                       placeholder={t('main.registration.username')}
                        value={this.state.email}
                        onChange={this.onChangeHandler} />
-                <p className='invalid-format'>
-                    {this.state.invalidPassword ? 'Please enter your password' : ''}
-                </p>
+                {this.state.invalidPassword ?
+                    <p className='invalid-format'>
+                        {t('main.registration.passwordRequired')}
+                    </p> : ''}
                 <input type='password'
                        className='login-form__input'
                        name='password'
-                       placeholder='password*'
+                       title={t('main.registration.password')}
+                       placeholder={t('main.registration.password')}
                        value={this.state.password}
                        onChange={this.onChangeHandler}
                 />
                 <p className='invalid-format'>
                     {this.state.invalidCredentials ? 'The entered credentials are invalid' : ''}
                 </p>
-                <button className='fr-button _dark _bordered'>login</button>
+                <button className='fr-button _dark _bordered'>{t('main.registration.login')}</button>
                 <div className='login-alternatives-container'>
                     <p className='message'>
-                        {/*{t('main.registration.nonRegistered')}*/}Not registered? <span onClick={() => this.redirectHandler('registration')} >
-                        Create an account</span>
+                        {t('main.registration.nonRegistered')} <span onClick={() => this.redirectHandler('registration')} >
+                        {t('main.registration.createAccount')}</span>
                     </p>
-                    {
-                        this.state.invalidCredentials ? <p className='message'>
-                                Forgot password?
+                    {this.state.invalidCredentials ? <p className='message'>{t('main.registration.forgotPassword')}
                             <span onClick={() => this.redirectHandler('resetPassword')} >
                                 Get reset token
                             </span>
-                        </p> : <></>
-                    }
+                        </p> : '' }
                 </div>
             </form>
         );
@@ -126,4 +128,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(withRouter(LoginRegistrationForm));
+export default withTranslation()(connect(mapStateToProps)(withRouter(LoginRegistrationForm)));

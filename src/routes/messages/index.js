@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 import './style/index.scss';
-import ChatView from "../../components/chat-view";
+import Chat from "../../components/chat";
 import InputArea from "../../components/input-area";
+import Contacts from "../../components/contacts";
+import SplitPane from "../../components/split-pane";
 
 const doggyUrl = 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg';
 const arrayUsers = ['Хороший мальчик', 'Пушистый засранец'];
@@ -10,6 +12,7 @@ const DUMMY_DATA = {
     messages : [
         {
             user: {
+                id:0,
                 username: arrayUsers[0],
                 color: "cornflowerblue",
                 avatarUrl: doggyUrl
@@ -19,6 +22,7 @@ const DUMMY_DATA = {
         },
         {
             user: {
+                id:1,
                 username: arrayUsers[1],
                 color: "#3a5fa2",
                 avatarUrl: 'https://placekitten.com/g/64/64',
@@ -28,6 +32,7 @@ const DUMMY_DATA = {
         },
         {
             user: {
+                id:0,
                 username: arrayUsers[0],
                 color: "cornflowerblue",
                 avatarUrl: doggyUrl
@@ -37,6 +42,7 @@ const DUMMY_DATA = {
         },
         {
             user: {
+                id:1,
                 username: arrayUsers[1],
                 color: "#3a5fa2",
                 avatarUrl: 'https://placekitten.com/g/64/64',
@@ -53,9 +59,14 @@ const DUMMY_DATA = {
         }
         ],
     user: {
+        id:0,
         username: arrayUsers[0],
         color: 'cornflowerblue',
         avatarUrl: doggyUrl
+    },
+    respondent: {
+        id:0,
+        username: arrayUsers[1]
     }
 };
 
@@ -64,6 +75,7 @@ class MessagesPage extends Component {
         super(props);
         this.state = {
             user: DUMMY_DATA.user,
+            respondent: DUMMY_DATA.respondent,
             messages: DUMMY_DATA.messages,
             value: ''
         }
@@ -93,10 +105,16 @@ class MessagesPage extends Component {
     render() {
         return (
             <div className='message-page-container'>
-                <div className='user-info-block'>
-                    Messages
-                </div>
-                <ChatView messages={this.state.messages} currentUser={this.state.user} />
+                <SplitPane
+                    left={
+                        <Contacts />
+                    }
+                    right={
+                        <Chat messages={this.state.messages}
+                              currentUser={this.state.user}
+                              respondent={this.state.respondent} />
+                    }
+                />
                 <InputArea onSendMessage={this.onSendMessage}/>
             </div>
         );
