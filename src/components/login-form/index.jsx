@@ -83,22 +83,22 @@ class LoginRegistrationForm extends Component {
                     <p className='invalid-format'>
                         {t('main.registration.usernameRequired')}
                     </p> : ''}
-                <input type='text'
+                <input type='text' required
                        className='login-form__input'
                        name='email'
-                       title={t('main.registration.username')}
-                       placeholder={t('main.registration.username')}
+                       title={t('main.profile.username')}
+                       placeholder={t('main.profile.username')}
                        value={this.state.email}
                        onChange={this.onChangeHandler} />
                 {this.state.invalidPassword ?
                     <p className='invalid-format'>
                         {t('main.registration.passwordRequired')}
                     </p> : ''}
-                <input type='password'
+                <input type='password' required
                        className='login-form__input'
                        name='password'
-                       title={t('main.registration.password')}
-                       placeholder={t('main.registration.password')}
+                       title={t('main.profile.password')}
+                       placeholder={t('main.profile.password')}
                        value={this.state.password}
                        onChange={this.onChangeHandler}
                 />

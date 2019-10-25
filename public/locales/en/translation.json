@@ -4,26 +4,39 @@
     "messages": "Messages",
     "favorites": "Favorites",
     "searchQuery": "Search new friends by location",
+    "actions": {
+      "save": "save"
+    },
     "bottomLinks": {
       "about": "About",
       "privacy": "Privacy & Terms"
     },
+    "profile": {
+      "aboutYourself": "A few words about yourself",
+      "firstName": "First name",
+      "firstNameTip": "Your name for other users",
+      "lastName": "Last name",
+      "password": "password",
+      "email": "email",
+      "username": "username",
+      "usernameTip": "Your username *",
+      "selectImage": "Upload Image",
+      "country": "Country",
+      "city": "City",
+      "birth": "Year of birth"
+    },
     "registration": {
+      "createAccount": "Create an account",
+      "existingUser": "Already registered?",
+      "forgotPassword": "Forgot password?",
       "login": "login",
       "register": "register",
       "nonRegistered": "Not registered?",
-      "existingUser": "Already registered?",
-      "passwordRules": "Password must contain a letter, digit, special character and have a length of 8 characters",
-      "createAccount": "Create an account",
-      "forgotPassword": "Forgot password?",
+      "emailRequired": "Please enter your email address",
       "usernameRequired": "Please enter your username",
       "passwordRequired": "Please enter your password",
-      "emailRequired": "Please enter your email address",
-      "wrongRepeatPasswords": "The passwords do not match",
-      "firstName": "First name",
-      "lastName": "Last name",
-      "password": "password",
-      "username": "username"
+      "passwordRules": "Password must contain a letter, digit, special character and have a length of 8 characters",
+      "wrongRepeatPasswords": "The passwords do not match"
     }
   }
 }

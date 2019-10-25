@@ -8,7 +8,7 @@ import { userRegistrationAction, userLoginAction } from '../../store/actions/aut
 import {withTranslation} from 'react-i18next';
 
 
-class RegistrationValidationForm extends Component {
+class RegistrationForm extends Component {
     state = {
         username: '',
         password: '',
@@ -98,12 +98,12 @@ class RegistrationValidationForm extends Component {
     render() {
         const {t} = this.props;
         return (
-            <div className='registration-validation-container'>
-                <form className='registration-validation-form' onSubmit={this.submitHandler}>
+            <div className='registration-container'>
+                <form className='registration-form' onSubmit={this.submitHandler}>
                     <p className='invalid-format'>{this.state.credentials_valid ? '' : 'Invalid email'}</p>
                     {this.state.email_valid ? '' : <p className='invalid-format'>{t('main.registration.emailRequired')}</p>}
                     <input type='text'
-                           className='registration-validation-form__input'
+                           className='fr-input'
                            name='email'
                            placeholder='email*'
                            value={this.state.email}
@@ -112,31 +112,31 @@ class RegistrationValidationForm extends Component {
                         {this.state.username_valid ? '' : 'Please enter a username address'}
                     </p>
                     <input type='text'
-                           className='registration-validation-form__input'
+                           className='fr-input'
                            name='username'
-                           title={t('main.registration.username')}
-                           placeholder={`${t('main.registration.username')}*`}
+                           title={t('main.profile.username')}
+                           placeholder={`${t('main.profile.username')}*`}
                            value={this.state.username}
                            onChange={this.onChangeHandler} />
                     <input type='text'
-                           className='registration-validation-form__input'
+                           className='fr-input'
                            name='first_name'
-                           title={t('main.registration.firstName')}
-                           placeholder={t('main.registration.firstName')}
+                           title={t('main.profile.firstName')}
+                           placeholder={t('main.profile.firstName')}
                            value={this.state.first_name}
                            onChange={this.onChangeHandler} />
                     <input type='text'
-                           className='registration-validation-form__input'
+                           className='fr-input'
                            name='last_name'
-                           title={t('main.registration.lastName')}
-                           placeholder={t('main.registration.lastName')}
+                           title={t('main.profile.lastName')}
+                           placeholder={t('main.profile.lastName')}
                            value={this.state.last_name}
                            onChange={this.onChangeHandler} />
                     <p className='invalid-format'>
                         {/*{this.state.token_valid ? '' : 'Please enter the token we sent you per mail'}*/}
                     </p>
                     {/*<input type='text'*/}
-                    {/*       className='registration-validation-form__input'*/}
+                    {/*       className='fr-input'*/}
                     {/*       name='token'*/}
                     {/*       placeholder='registration token*'*/}
                     {/*       value={this.state.token}*/}
@@ -145,16 +145,16 @@ class RegistrationValidationForm extends Component {
                          {t('main.registration.passwordRules')}
                     </p>: ''}
                     <input type='password'
-                           className='registration-validation-form__input'
+                           className='fr-input'
                            name='password'
-                           title={t('main.registration.password')}
-                           placeholder={`${t('main.registration.password')}*`}
+                           title={t('main.profile.password')}
+                           placeholder={`${t('main.profile.password')}*`}
                            value={this.state.password}
                            onChange={this.onChangeHandler}/>
                     {this.state.passwords_identical ? '' :
                         <p className='invalid-format'>{t('main.registration.wrongRepeatPasswords')}</p>}
                     {/*<input type='password'*/}
-                    {/*       className='registration-validation-form__input'*/}
+                    {/*       className='fr-input'*/}
                     {/*       name='password_repeat'*/}
                     {/*       placeholder='repeat password*'*/}
                     {/*       value={this.state.password_repeat}*/}
@@ -169,4 +169,4 @@ class RegistrationValidationForm extends Component {
     };
 }
 
-export default withTranslation()(connect()(withRouter(RegistrationValidationForm)));
+export default withTranslation()(connect()(withRouter(RegistrationForm)));

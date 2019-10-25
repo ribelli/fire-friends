@@ -1,4 +1,4 @@
-@import "./components/css/fr-button.scss";
+@import "components/styles";
 
 * {
   box-sizing: border-box;
@@ -20,6 +20,15 @@
 :root {
   min-width: auto;
   height: 100%;
+
+  /* generic */
+
+  --transitionDuration: 300ms;
+  --inputFontSize: 14px;
+  --inputPaddingV: 0.8rem;
+  --inputTransitionDuration: var(--transitionDuration);
+  --inputTransitionTF: cubic-bezier(0.2, 0.2, 0.1, 1);
+  --labelTransformedPosY: calc(100% - (var(--inputPaddingV) * 0.8) - (var(--inputFontSize) * 1.8));
 }
 
 html, body {
@@ -64,4 +73,8 @@ code {
 
 *:focus {
   outline: none;
+}
+
+.input-container {
+  position: relative;
 }

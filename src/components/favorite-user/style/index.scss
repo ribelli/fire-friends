@@ -1,6 +1,6 @@
-.favorite-user-container {
+.favorite-user {
   position: relative;
-  min-width: 165px;
+  min-width: 210px;
   background-color: #f9fdfe;
   border-radius: 3px;
   padding: 15px 0 6px;
@@ -21,19 +21,20 @@
 
   .general-info {
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
-    &__name {
+    &__base {
       font-weight: 500;
     }
-  }
 
-  .username {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 2px 0 6px;
-    color: #8a8a8a;
+    &__username {
+      display: block;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 2px 0 6px;
+      color: #8a8a8a;
+    }
   }
 
   .location-info {

@@ -39,7 +39,6 @@ export const  userLoginAction = (username, password) => (dispatch, getState) =>
     let formData = {username, password};
     return axios.post('/users/login', formData, config)
         .then(response => {
-            console.log(response.data.token);
             dispatch(storeTokenAction(response.data.token, response.data.refresh));
             localStorage.setItem('token', JSON.stringify(response.data.token));
             return response.data;
@@ -49,7 +48,6 @@ export const  userLoginAction = (username, password) => (dispatch, getState) =>
 
 export const userRegistrationAction = (username, first_name, last_name, password, email) => (dispatch, getState) => {
     let formData = {username, first_name, last_name, password, email};
-    console.log(formData)
 
     return axios.post('users/register', formData, config)
         .then(response => {

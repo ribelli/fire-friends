@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import './style/index.scss';
 import Chat from "../../components/chat";
-import InputArea from "../../components/input-area";
 import Contacts from "../../components/contacts";
 import SplitPane from "../../components/split-pane";
 
@@ -74,16 +73,13 @@ class MessagesPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: DUMMY_DATA.user,
-            respondent: DUMMY_DATA.respondent,
-            messages: DUMMY_DATA.messages,
             value: ''
         }
     }
 
     componentDidMount() {
         this.clearState();
-        this.connection = new WebSocket('ws://localhost:8080/ws');
+        // this.connection = new WebSocket('ws://localhost:8080/ws');
     };
 
     clearState = () => {
@@ -92,15 +88,14 @@ class MessagesPage extends Component {
         });
     };
 
-    onSendMessage = (text) => {
-        // ws://eiden.local:8080/ws
-        this.state.messages.push({
-            text,
-            user : this.state.user,
-        });
-        this.connection.send(text);
-        this.setState({text});
-    };
+    // onSendMessage = (text) => {
+    //     this.state.messages.push({
+    //         text,
+    //         user : this.state.user,
+    //     });
+    //     this.connection.send(text);
+    //     this.setState({text});
+    // };
 
     render() {
         return (
@@ -110,12 +105,11 @@ class MessagesPage extends Component {
                         <Contacts />
                     }
                     right={
-                        <Chat messages={this.state.messages}
-                              currentUser={this.state.user}
-                              respondent={this.state.respondent} />
+                        <Chat messages={DUMMY_DATA.messages}
+                              currentUser={DUMMY_DATA.user}
+                              respondent={DUMMY_DATA.respondent} />
                     }
                 />
-                <InputArea onSendMessage={this.onSendMessage}/>
             </div>
         );
     };

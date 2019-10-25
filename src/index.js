@@ -1,39 +1,31 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
-import store from './store/store.js';
-
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.scss';
-
 import './i18n';
 
+import AuthenticationRequired from './high-order-component';
+import store from './store/store.js';
+import { storeTokenAction } from "./store/actions/authentication-actions";
+import * as serviceWorker from './serviceWorker';
 import App from './App';
 import HomePage from './routes/home';
 import MessagesPage from "./routes/messages";
-
-import AuthenticationRequired from './high-order-component';
-
-import * as serviceWorker from './serviceWorker';
-
 import GroupPage from "./routes/group-page";
 import GroupsPage from "./routes/groups";
 import FavoritesPage from "./routes/favorites";
 import LoginPage from "./routes/login";
 import ProfilePage from "./routes/profile";
-import RegistrationPage from "./routes/registration-validation";
+import RegistrationPage from "./routes/registration";
 import RegistrationTokenPage from "./routes/registration-token";
 import SettingsPage from "./routes/settings/settings";
-import { storeTokenAction } from "./store/actions/authentication-actions";
 import AboutPage from "./routes/about";
-
-// ReactDOM.render(<App />, document.getElementById('root'));
 
 const token = localStorage.getItem('token');
 if (token) {
     store.dispatch(storeTokenAction(token));
 }
-
 
 ReactDOM.render(
     <Provider store={store}>

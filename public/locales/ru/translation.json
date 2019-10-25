@@ -4,26 +4,39 @@
     "messages": "Сообщения",
     "favorites": "Избранные",
     "searchQuery": "Найти новых друзей рядом",
+    "actions": {
+      "save": "сохранить"
+    },
     "bottomLinks": {
       "about": "About",
       "privacy": "Privacy & Terms"
     },
+    "profile": {
+      "aboutYourself": "Пара слов о себе",
+      "firstName": "Имя",
+      "firstNameTip": "Имя, которое увидят пользователи",
+      "lastName": "Фамилия",
+      "email": "email",
+      "password": "пароль",
+      "username": "логин",
+      "usernameTip": "Ваш логин *",
+      "selectImage": "Загрузить изображение",
+      "country": "Страна",
+      "city": "Город",
+      "birth": "Год рождения"
+    },
     "registration": {
+      "createAccount": "Создать аккаунт",
+      "existingUser": "Уже зарегистрированы?",
+      "forgotPassword": "Забыли пароль?",
       "login": "войти",
       "register": "регистрация",
       "nonRegistered": "Не зарегистрированы?",
-      "existingUser": "Уже зарегистрированы?",
-      "passwordRules": "Пароль должен содержать буквы, цифры, знаки и иметь длину более 8 символов",
-      "createAccount": "Создать аккаунт",
-      "forgotPassword": "Забыли пароль?",
+      "emailRequired": "Пожалуйста, укажите Ваш email",
       "usernameRequired": "Пожалуйста, укажите Ваш логин",
       "passwordRequired": "Пожалуйста, укажите Ваш пароль",
-      "emailRequired": "Пожалуйста, укажите Ваш email",
-      "wrongRepeatPasswords": "Пароли не совпадают",
-      "firstName": "Имя",
-      "lastName": "Фамилия",
-      "password": "пароль",
-      "username": "логин"
+      "passwordRules": "Пароль должен содержать буквы, цифры, знаки и иметь длину более 8 символов",
+      "wrongRepeatPasswords": "Пароли не совпадают"
     }
   }
 }

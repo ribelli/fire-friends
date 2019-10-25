@@ -1,41 +1,45 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import {withRouter} from 'react-router-dom';
 import './style/index.scss';
 import Avatar from "../avatar";
 import InterestsGraphUser from "../interests-graph-user";
 
 class FavoriteUser extends Component {
+    redirectHandler = to => {
+        this.props.history.push(to);
+    };
+
     render() {
+        const {userName, name, age, avatarUrl, country, city} = this.props;
 
         return (
-            <div className='favorite-user-container'>
-                <div>
-                    <Link to={this.props.userName}>
-                        <Avatar user={this.props} isDefaultSize={true} />
-                    </Link>
+            <div className='favorite-user'>
+                <div onClick={() => this.redirectHandler(userName)}>
+                    <Avatar content={avatarUrl} isDefaultSize={true} />
                 </div>
                 <div className='general-info'>
-                    <div className='general-info__name'>{this.props.name}, </div>
-                    <div className='general-info__age'>{this.props.age}</div>
+                    <div className='general-info__base'>
+                        {name}, <span>{age}</span>
+                    </div>
+                    <div className='general-info__username'
+                         onClick={() => this.redirectHandler(userName)}>
+                        {userName}
+                    </div>
                 </div>
-                <Link to={this.props.userName}
-                      className='username'>
-                    {this.props.userName}
-                </Link>
                 <InterestsGraphUser/>
                 <div className='location-info'>
-                    <Link to={this.props.country}
-                          className='location-info__country'>
-                        {this.props.country}:
-                    </Link>
-                    <Link to={`${'statistics\\'}` + this.props.city}
-                          className='location-info__city'>
-                        {this.props.city}
-                    </Link>
+                    <span className='location-info__country'
+                          onClick={() => this.redirectHandler(`${'statistics\\'}` + country)}>
+                        {country}:
+                    </span>
+                    <span className='location-info__city'
+                          onClick={() => this.redirectHandler(`${'statistics\\'}` + city)}>
+                        {city}
+                    </span>
                 </div>
             </div>
         )
     }
 }
 
-export default FavoriteUser;
+export default withRouter(FavoriteUser);

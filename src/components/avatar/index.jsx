@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style/index.scss';
+import defaultImagesPath from '../../assets/default-user-icon.jpg';
 import classNames from 'classnames';
 
 // add srcset for img
@@ -14,10 +15,14 @@ class Avatar extends Component {
             '_middle': this.props.isDefaultSize
         });
 
+        let imageUrl = this.props.content ? this.props.content : defaultImagesPath;
+
         return (
-            <img className={avatarOptions}
-                 src={this.props.user.avatarUrl}
-                 alt={this.props.user.name} />
+            <div className='avatar-container'>
+                <img className={avatarOptions}
+                     alt='user-avatar'
+                     src={imageUrl} />
+            </div>
         )
     }
 }

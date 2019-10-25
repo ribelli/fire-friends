@@ -37,7 +37,7 @@ class InputArea extends Component {
         return(
             <section className="input-layer">
                 <form className="input-layer__form" onSubmit={this.onFormSubmit}>
-                <textarea className="input-layer__textarea _dark"
+                <textarea className="input-layer__textarea _dark fr-textarea"
                           onChange={e => this.onChange(e)}
                           onKeyDown={this.onKeyDown}
                           value={this.state.text}

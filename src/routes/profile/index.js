@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-
-import Avatar from "../../components/avatar";
-import ProfileStatus from "../../components/profile-status";
+import React, { Component, Suspense } from 'react';
 
 import './style/index.scss';
 import InterestsPersonalGraph from "../../components/interests-personal-graph";
+import Profile from "../../components/profile";
 
 const user = {
     date: new Date(),
     text: 'enjoy! azaza',
     author: {
-        name: 'Mr Kitty',
+        username: 'Mr Kitty',
+        firstName: 'Cat',
         id: '/profile',
         avatarUrl: 'https://placekitten.com/g/64/64',
     },
@@ -21,28 +19,21 @@ const user = {
 };
 
 class ProfilePage extends Component {
-
     render() {
-        let isDefaultSize = true;
-
         return (
-            <div className='profile-page'>
-                <div className='user-info-block'>
-                    Profile page
-                    <div className='user-layout'>
-                        <div className="avatar-container">
-                            <Link to="/settings" aria-label="Go to Settings" title="Go to Settings">
-                                <Avatar user={user.author} isDefaultSize={isDefaultSize} />
-                            </Link>
-                            <div>{user.author.name}</div>
-                            <ProfileStatus/>
-                        </div>
-                        <div className='common-info-container'>
-                            <InterestsPersonalGraph />
+            <Suspense fallback='loading'>
+                <div className='profile-page'>
+                    <div className='user-info-block'>
+                        Profile page
+                        <div className='user-layout'>
+                            <div className='common-info-container'>
+                                <InterestsPersonalGraph />
+                                <Profile />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </Suspense>
         );
     };
 }

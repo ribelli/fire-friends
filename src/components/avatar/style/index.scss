@@ -1,31 +1,50 @@
 $defaultGreyColor: #828282;
 $defaultColorOnHover: #00e3a6;
 
-.user-avatar {
-  box-sizing: border-box;
+.avatar-container {
+  position: relative;
 
   &:hover {
-    cursor: pointer;
-  }
-
-  &._middle {
-    width: 130px;
-    height: 130px;
-    border: 1px solid $defaultGreyColor;
-  }
-
-  &._mini {
-    width: 33px;
-    height: 33px;
-    border: 2px solid white;
-    margin-right: 10px;
-
-    &:hover {
-      border-color: #00e3a6;
+    .user-avatar._middle {
+      opacity: 0.7;
+    }
+    .help-layer {
+      opacity: 1;
     }
   }
 
-  &._rounded {
-    border-radius: 50%;
+  .user-avatar {
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &._middle {
+      width: 130px;
+      height: 130px;
+      border: 1px solid $defaultGreyColor;
+      transition: .5s ease;
+      backface-visibility: hidden;
+    }
+
+    &._mini {
+      width: 33px;
+      height: 33px;
+      border: 2px solid white;
+      margin-right: 10px;
+
+      &:hover {
+        border-color: #00e3a6;
+      }
+    }
+
+    &._rounded {
+      border-radius: 50%;
+    }
   }
 }
+
+
+
+

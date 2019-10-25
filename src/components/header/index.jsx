@@ -21,15 +21,21 @@ const comment = {
 
 class Header extends Component {
     render() {
+
+        let userInfo = {
+            basicData: this.props.userInfo,
+            avatarUrl: 'https://placekitten.com/g/64/64',
+        };
+
         return (
             <header className="top-bar _fixed _dark">
                 <Suspense fallback='loading'>
-                    <div className="header-line">
+                    <div className="top-bar__b-line">
                         <Link to="/" className="logo">Friends</Link>
                         <CommonMenu/>
                         <GlobalSearch/>
                         <LanguageSelect/>
-                        <UserCard user={comment.author}
+                        <UserCard user={userInfo}
                                   isNewFiend={this.props.isFriend}
                                   eventCounter={comment.action}/>
                     </div>

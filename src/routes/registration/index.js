@@ -1,13 +1,13 @@
 import React, { Component, Suspense } from 'react';
 
-import RegistrationValidationForm from '../../components/registration-validation-form';
+import RegistrationForm from '../../components/registration-form';
 
 
 class RegistrationPage extends Component {
     render() {
         return (
             <Suspense fallback='loading'>
-                <RegistrationValidationForm />
+                <RegistrationForm />
             </Suspense>
         );
     };
