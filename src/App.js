@@ -26,9 +26,9 @@ class App extends Component {
     }
 
     render() {
-
         console.log('app', this.state);
         const isShowFooter = this.props.location.pathname === '/messages';
+
         return (
             <div className="app">
                 <Header isFriend={this.props.auth} userInfo={this.state}/>

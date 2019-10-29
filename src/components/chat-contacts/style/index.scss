@@ -1,0 +1,14 @@
+.chat-contacts {
+  height: 100%;
+
+  &__title {
+    background-color: #8a8a8a;
+    color: #333333;
+  }
+
+  &__list {
+    margin: 0 auto;
+    overflow-y: auto;
+    height: 100%;
+  }
+}

@@ -1,3 +1,5 @@
+$defaultGreyColor: #828282;
+
 .common-menu {
   display: flex;
   list-style-type: none;
@@ -19,7 +21,7 @@
     padding: 3px 15px;
 
     &:hover {
-      background-color: #828282;
+      background-color: $defaultGreyColor;
       cursor: pointer;
     }
   }

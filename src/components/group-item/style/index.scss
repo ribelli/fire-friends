@@ -1,3 +1,5 @@
+$defaultGreyColor: #828282;
+
 .group-layer {
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +32,7 @@
 
     &__value {
       font-size: 12px;
-      color: #828282;
+      color: $defaultGreyColor;
     }
   }
 }

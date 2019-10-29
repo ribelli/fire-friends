@@ -8,7 +8,6 @@ class ChatMessage extends Component {
     }
 
     render() {
-        debugger
         let message = this.props.message;
         let user = message.user;
         const isCurrentUser = user.id === this.props.currentUser.id;

@@ -8,6 +8,7 @@ const userReducer = (state = {}, action) => {
                 username: action.user.username,
                 email: action.user.email,
                 first_name: action.user.first_name,
+                last_name: action.user.last_name,
             };
 
         default:

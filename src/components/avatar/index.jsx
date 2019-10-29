@@ -3,22 +3,20 @@ import './style/index.scss';
 import defaultImagesPath from '../../assets/default-user-icon.jpg';
 import classNames from 'classnames';
 
-// add srcset for img
-
 class Avatar extends Component {
     render() {
 
         let avatarOptions = classNames({
             'user-avatar' : true,
-            '_rounded' : true,
-            '_mini' : !this.props.isDefaultSize,
-            '_middle': this.props.isDefaultSize
+            'user-avatar_rounded' : true,
+            'user-avatar_mini' : !this.props.isDefaultSize,
+            'user-avatar_middle': this.props.isDefaultSize
         });
 
         let imageUrl = this.props.content ? this.props.content : defaultImagesPath;
 
         return (
-            <div className='avatar-container'>
+            <div className='avatar'>
                 <img className={avatarOptions}
                      alt='user-avatar'
                      src={imageUrl} />

@@ -1,11 +1,13 @@
+$defaultGreyColor: #828282;
+
 .input-layer {
   display: flex;
   position: fixed;
   bottom: 0;
-  left: 0;
+  left: 30%;
   right: 0;
   border-top: 1px solid #e0e0e0;
-  border-bottom: 15px solid #828282;
+  border-bottom: 10px solid $defaultGreyColor;
   background-color: #efefef;
 
   @media screen and (max-height: 768px) {
@@ -22,13 +24,12 @@
     flex-direction: row;
   }
 
-  &__textarea {
+  .textarea {
     width: 100%;
     border: 1px solid;
-    border-radius: 5px;
     padding: 10px 17px;
 
-    &._dark {
+    &_dark {
       border-color: #333333;
     }
   }

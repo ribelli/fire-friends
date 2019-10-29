@@ -9670,11 +9670,6 @@ react-is@^16.8.6:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.10.1.tgz#0612786bf19df406502d935494f0450b40b8294f"
   integrity sha512-BXUMf9sIOPXXZWqr7+c5SeOKJykyVr2u0UDzEf4LNGc6taGkQe1A9DFD07umCIXz45RLr9oAAwZbAJ0Pkknfaw==
 
-react-laag@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-laag/-/react-laag-1.2.0.tgz#a3c756b5ab7fc8e6defab33313fbb82baadb3e3a"
-  integrity sha512-h8Dwv96qEIpkEHjiFGrt7vB8bJfgPgJxU+GHVdVOS7nRfnu0bvmfax4Jyt49j3MVkmbz6DCD7Pt9cvXKPmWbqg==
-
 react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"

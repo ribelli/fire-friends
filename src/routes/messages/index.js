@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './style/index.scss';
 import Chat from "../../components/chat";
-import Contacts from "../../components/contacts";
+import ChatContacts from "../../components/chat-contacts";
 import SplitPane from "../../components/split-pane";
 
 const doggyUrl = 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg';
@@ -102,7 +102,7 @@ class MessagesPage extends Component {
             <div className='message-page-container'>
                 <SplitPane
                     left={
-                        <Contacts />
+                        <ChatContacts />
                     }
                     right={
                         <Chat messages={DUMMY_DATA.messages}

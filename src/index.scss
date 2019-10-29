@@ -22,7 +22,6 @@
   height: 100%;
 
   /* generic */
-
   --transitionDuration: 300ms;
   --inputFontSize: 14px;
   --inputPaddingV: 0.8rem;
@@ -52,14 +51,9 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #FFF;
-  background-image: none;
-  background-position: top left;
-  background-repeat: repeat;
-  background-size: auto;
 
   & > #root {
     overflow-y: hidden;
-    /* padding-top: 47px; */
     min-height: 100%;
     height: 100vh;
     position: relative;
