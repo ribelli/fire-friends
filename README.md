@@ -1,3 +1,5 @@
+This project in progress of development now.
+
 ## Available Scripts
 
 In the project directory, you can run:
