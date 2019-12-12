@@ -26,7 +26,7 @@ const DUMMY_DATA = {
                 color: "#3a5fa2",
                 avatarUrl: 'https://placekitten.com/g/64/64',
             },
-            text: 'Привет педик',
+            text: 'Привет, пес',
             date: new Date().toLocaleString(),
         },
         {
@@ -36,7 +36,7 @@ const DUMMY_DATA = {
                 color: "cornflowerblue",
                 avatarUrl: doggyUrl
             },
-            text: 'нет ты',
+            text: 'нет, ты',
             date: new Date().toLocaleString(),
         },
         {
