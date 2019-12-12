@@ -1,5 +1,7 @@
 $defaultGreyColor: #828282;
 $defaultColorOnHover: #00e3a6;
+$avatarMiddleSize: 130px;
+$avatarMiniSize: 33px;
 
 .avatar {
   position: relative;
@@ -18,16 +20,16 @@ $defaultColorOnHover: #00e3a6;
     }
 
     &_middle {
-      width: 130px;
-      height: 130px;
+      width: $avatarMiddleSize;
+      height: $avatarMiddleSize;
       border: 1px solid $defaultGreyColor;
       transition: .5s ease;
       backface-visibility: hidden;
     }
 
     &_mini {
-      width: 33px;
-      height: 33px;
+      width: $avatarMiniSize;
+      height: $avatarMiniSize;
       border: 2px solid white;
       margin-right: 10px;
 

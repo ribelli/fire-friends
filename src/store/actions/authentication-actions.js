@@ -47,12 +47,19 @@ export const  userLoginAction = (username, password) => (dispatch, getState) =>
 };
 
 export const userRegistrationAction = (username, first_name, last_name, password, email) => (dispatch, getState) => {
-    let formData = {username, first_name, last_name, password, email};
+    let formData = {
+        username,
+        first_name,
+        last_name,
+        password,
+        email
+    };
 
     return axios.post('users/register', formData, config)
         .then(response => {
             return (response);
-        }).catch(error => console.log('ERROR', error));
+        })
+        .catch(error => console.log('ERROR', error));
 };
 
 export const userRegistrationValidationAction = data => (dispatch, getState) => {
@@ -75,19 +82,22 @@ export const userRegistrationValidationAction = data => (dispatch, getState) => 
                 .then(data => {
                     return data;
                 });
-        }).catch(error => console.log('ERROR', error));
+        })
+        .catch(error => console.log('ERROR', error));
 };
 
 export const resetPasswordTokenAction = email => (dispatch, getState) => {
     return axios.post('api/password-reset/', { email })
         .then(response => {
             return response;
-        }).catch(error => console.log('ERROR', error));
+        })
+        .catch(error => console.log('ERROR', error));
 };
 
 export const resetUserPasswordAction = (email, code, password, password_repeat) => (dispatch, getState) => {
     return axios.post('api/password-reset/validate/', { email, code, password, password_repeat })
         .then(response => {
             return response;
-        }).catch(error => console.log('ERROR', error));
+        })
+        .catch(error => console.log('ERROR', error));
 };

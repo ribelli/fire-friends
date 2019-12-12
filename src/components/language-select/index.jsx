@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
+//TODO: refactoring for future
+
 const LanguageSelect = () => {
 
     const { i18n } = useTranslation();

@@ -1,13 +1,13 @@
 import { STORE_USER_INFO } from '../types/types.js';
 import axios from '../../axios';
 
+
 const storeUserInfoAction = user => {
     return {
         type: STORE_USER_INFO,
         user
     };
 };
-
 
 export const fetchUserInfo = () => (dispatch, getState) => {
     const token = localStorage.getItem('token');

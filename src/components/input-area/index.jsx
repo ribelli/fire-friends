@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import './style/index.scss';
 
-const placeholderValue = 'Write a message...';
+const PLACEHOLDER_VALUE = 'Write a message...';
 
-// TODO: create logic for tabIndex at elements
 // TODO: this file require in review
 
 class InputArea extends Component {
     state = {
-        text: ''
+        text: '',
     };
 
     onChange = (e) => {
@@ -41,8 +40,10 @@ class InputArea extends Component {
                               onChange={e => this.onChange(e)}
                               onKeyDown={this.onKeyDown}
                               value={this.state.text}
-                              placeholder={placeholderValue}
-                              rows={2} tabIndex="5" spellCheck="true" />
+                              placeholder={PLACEHOLDER_VALUE}
+                              rows={2}
+                              tabIndex="1"
+                              spellCheck="true" />
                 </form>
             </section>
         );

@@ -21,7 +21,7 @@ const index = {
     },
     user3: {
         name: 'Kotey',
-        userName: 'FuckDogs',
+        userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
         country: 'RU',
@@ -37,7 +37,7 @@ const index = {
     },
     user5: {
         name: 'Kotey',
-        userName: 'FuckDogs',
+        userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
         country: 'RU',
@@ -53,7 +53,7 @@ const index = {
     },
     user7: {
         name: 'Kotey',
-        userName: 'FuckDogs',
+        userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
         country: 'RU',
@@ -69,7 +69,7 @@ const index = {
     },
     user9: {
         name: 'Kotey',
-        userName: 'FuckDogs',
+        userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
         country: 'RU',
@@ -85,7 +85,7 @@ const index = {
     },
     user11: {
         name: 'Kotey',
-        userName: 'FuckDogs',
+        userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
         country: 'RU',
@@ -129,11 +129,11 @@ class FavoritesPage extends Component {
 
     render() {
         return (
-            <div className='favorites-page-container'>
+            <div className="favorites-page-container">
                 <div>
                     Favorites
                 </div>
-                <div className='favorite-layout'>
+                <div className="favorite-layout">
                     {Object.values(index).map((favorite, i) =>
                         FavoritesPage.renderFavorites(favorite, i))}
                 </div>
