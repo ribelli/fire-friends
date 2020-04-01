@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import ChatMessage from "../chat-message";
+import ChatMessage from '../chat-message';
+import InputArea from '../input-area';
+import TypingIndicator from '../typing-indicator';
 import './style/index.scss';
-import InputArea from "../input-area";
-import TypingIndicator from "../typing-indicator";
 
 class Chat extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            //containerWidth: props.containerWidth,
             nextId: props.messages.length,
             messages: props.messages,
             user: props.currentUser,
@@ -41,25 +42,23 @@ class Chat extends Component {
     sendTypingEvent(event) {
         this.state.currentUser
             .isTypingIn({ roomId: this.state.currentRoom.id })
-            .catch(error => console.error('error', error))
+            .catch(error => console.error('error', error));
         this.setState({
             chatInput: event.target.value
         });
     }
 
     onSendMessage = (text) => {
-        this.state.messages.push({
-            id: this.state.nextId,
-            text,
-            user : this.state.user
-        });
-        let nextId = this.state.nextId++;
         //this.connection.send(text);
-        this.setState({
-            nextId: nextId,
+        this.setState(prevState => ({
+            messages: [...prevState.messages, {
+                user : prevState.user,
+                text
+            }],
+            nextId: prevState.nextId++,
             text,
             notUpdate: true
-        });
+        }));
     };
 
     // renderMessage(message, i) {
@@ -80,15 +79,23 @@ class Chat extends Component {
 
     // avatarUrl backgroundImg
     render() {
+
         const {respondent} = this.state;
         let messagesList =
             this.state.messages.map((message, i) => {
-                return <ChatMessage message={message} key={message.id} id={i} currentUser={this.props.currentUser}/>
+                return <ChatMessage message={message}
+                                    key={message.id}
+                                    id={i}
+                                    currentUser={this.props.currentUser}/>
             });
         return (
-            <div className='chat-container'>
-                <div className='respondent-view'>{respondent.username}</div>
-                <ul className='chat-view' ref='wrap'>
+            <div className="chat-container">
+                <div className="respondent-view">
+                    <img src={respondent.avatarUrl}
+                         className="respondent-view__avatar" alt="respondent-avatar"/>
+                    <div>{respondent.username}</div>
+                </div>
+                <ul className="chat-view" ref="wrap">
                     {messagesList}
                 </ul>
                 <InputArea onSendMessage={this.onSendMessage} />

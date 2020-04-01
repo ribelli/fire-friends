@@ -7,7 +7,7 @@ const availableLanguages = ['en', 'ru'];
 
 i18n
     .use(Backend) // load translation using xhr -> see /public/locales. We will add locales in the next step
-    .use(LanguageDetector) // load translation using xhr -> see /public/locales
+    .use(LanguageDetector)
     .use(initReactI18next)
     // for all options read: https://www.i18next.com/overview/configuration-options
     .init({

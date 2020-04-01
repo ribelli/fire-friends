@@ -5,10 +5,12 @@ import {withTranslation} from 'react-i18next';
 import {changeUserInfo, fetchUserInfo} from "../../store/actions/user-actions";
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import MovieSelect from '../movie-select';
 
 
 const countryOptions = [
     { value: 'RU', label: 'Russia' },
+    { value: 'UA', label: 'Ukraine' },
     { value: 'FI', label: 'Finland' },
     { value: 'US', label: 'USA' },
     { value: 'SE', label: 'Sweden' },
@@ -34,6 +36,7 @@ class SettingsForm extends Component {
             first_name: '',
             last_name: '',
             city: '',
+            letterboxd: '',
             bio: '',
             selected_country: null,
             selected_year: null,
@@ -101,38 +104,47 @@ class SettingsForm extends Component {
                 if (data) {
                     console.log('YEAP');
                 } else {
-                    this.setState({
-                    });
+                    this.setState({});
                 }
             });
     };
 
     render() {
         const {t} = this.props;
-        const { username, email, first_name, last_name, selected_country, city, selected_year, bio } = this.state;
+        const {
+            username, email,
+            first_name, last_name,
+            selected_country, city,
+            letterboxd, selected_year,
+            bio
+        } = this.state;
         return(
                 <form onSubmit={this.handleSubmit} className="settings-form">
-                    <div className="input-container">
-                        <input className='fr-input' type='text'
-                               tabIndex="1"
-                               placeholder={t('main.profile.usernameTip')}
-                               value={username}
-                               onChange={this.handleChange}
-                               name='username' />
-                        <label htmlFor='username' className='fr-label'>
-                            {t('main.profile.username')}
-                        </label>
-                    </div>
-                    <div className="input-container">
-                        <input className='fr-input' type='text'
-                               tabIndex="2"
-                               placeholder={t('main.profile.email')}
-                               value={email}
-                               onChange={this.handleChange}
-                               name='email' />
-                        <label htmlFor='email' className='fr-label'>
-                            {t('main.profile.email')}
-                        </label>
+                    <div>
+                        <div className="input-container">
+                            <input className='fr-input' type='text'
+                                   tabIndex="1"
+                                   placeholder={t('main.profile.usernameTip')}
+                                   value={username}
+                                   onChange={this.handleChange}
+                                   required={true}
+                                   name='username' />
+                            <label htmlFor='username' className='fr-label'>
+                                {t('main.profile.username')}
+                            </label>
+                        </div>
+                        <div className="input-container">
+                            <input className='fr-input' type='text'
+                                   tabIndex="2"
+                                   placeholder={t('main.profile.email')}
+                                   value={email}
+                                   onChange={this.handleChange}
+                                   required={true}
+                                   name='email' />
+                            <label htmlFor='email' className='fr-label'>
+                                {t('main.profile.email')}
+                            </label>
+                        </div>
                     </div>
                     <div className="input-container">
                         <input className='fr-input' type='text'
@@ -178,13 +190,36 @@ class SettingsForm extends Component {
                         </label>
                     </div>
                     <div className="input-container">
+                        <input className='fr-input' type='text'
+                               tabIndex="7"
+                               value={letterboxd}
+                               placeholder={t('main.profile.letterboxd')}
+                               onChange={this.handleChange}
+                               name='letterboxd' />
+                        <label htmlFor='letterboxd' className='fr-label'>
+                            letterboxd
+                        </label>
+                    </div>
+                    <MovieSelect placeholderQuery={t('main.profile.favoriteFilms')}
+                                 searchText={t('main.profile.searchText')}/>
+                    <div className="input-container">
                         <Select
                             classNamePrefix='select-list'
                             placeholder={t('main.profile.birth')}
                             value={selected_year}
                             onChange={this.handleSelectYearChange}
                             options={yearOptions}
-                            tabIndex="7"
+                            tabIndex="9"
+                            isSearchable={true}/>
+                    </div>
+                    <div className="input-container">
+                        <Select
+                            classNamePrefix='select-list'
+                            placeholder={t('main.profile.birth')}
+                            value={selected_year}
+                            onChange={this.handleSelectMovieChange}
+                            options={yearOptions}
+                            tabIndex="10"
                             isSearchable={true}/>
                     </div>
                     <div className="input-container">
@@ -192,7 +227,7 @@ class SettingsForm extends Component {
                                   value={bio}
                                   placeholder={t('main.profile.aboutYourself')}
                                   rows={3}
-                                  tabIndex="8"
+                                  tabIndex="11"
                                   spellCheck="true"
                                   onChange={this.handleChange}
                                   name='bio' />
@@ -201,7 +236,7 @@ class SettingsForm extends Component {
                         </label>
                     </div>
                     <button className='fr-button _dark _bordered'
-                            tabIndex="9" type='submit'>
+                            tabIndex="12" type='submit'>
                         {t('main.actions.save')}
                     </button>
                 </form>

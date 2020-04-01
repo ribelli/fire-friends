@@ -9,6 +9,11 @@
   box-sizing: border-box;
   font-size: 14px;
 
+  &._grow-2 {
+    flex-grow: 2;
+    width: auto;
+  }
+
   &:focus {
     outline: none;
   }

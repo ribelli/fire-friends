@@ -4,6 +4,15 @@ import './style/index.scss';
 import Avatar from "../avatar";
 import {withTranslation} from "react-i18next";
 
+const mockProfile = {
+    id: 0,
+    name: 'Carlo',
+    userName: 'Carlo228',
+    avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
+    age: 27,
+    country: 'SP',
+    city: 'Madrid'
+};
 
 class Profile extends Component {
     constructor(props) {
@@ -44,11 +53,13 @@ class Profile extends Component {
         let isDefaultSize = true;
         const {t} = this.props;
 
+        // content={this.state.imgURl}
+
         return (
             <div className='profile'>
                 <div className="profile__avatar">
                     <Avatar title="Go to Settings"
-                            content={this.state.imgURl}
+                            content={mockProfile.avatarUrl}
                             isDefaultSize={isDefaultSize} />
                     <label htmlFor='input' className='upload-area'>
                         {t('main.profile.selectImage')}

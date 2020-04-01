@@ -98,7 +98,6 @@ class RegistrationForm extends Component {
     render() {
         const {t} = this.props;
         return (
-            <div className='registration-container'>
                 <form className='registration-form' onSubmit={this.submitHandler}>
                     <p className='invalid-format'>{this.state.credentials_valid ? '' : 'Invalid email'}</p>
                     {this.state.email_valid ? '' : <p className='invalid-format'>{t('main.registration.emailRequired')}</p>}
@@ -115,7 +114,7 @@ class RegistrationForm extends Component {
                            className='fr-input'
                            name='username'
                            title={t('main.profile.username')}
-                           placeholder={`${t('main.profile.username')}*`}
+                           placeholder={t('main.profile.username')}
                            value={this.state.username}
                            onChange={this.onChangeHandler} />
                     <input type='text'
@@ -164,7 +163,6 @@ class RegistrationForm extends Component {
                         <span onClick={()=> this.redirectHandler('login')}> {t('main.registration.login')}</span>
                     </p>
                 </form>
-            </div>
         );
     };
 }

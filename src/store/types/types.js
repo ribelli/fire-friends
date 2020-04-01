@@ -6,15 +6,19 @@ export const REMOVE_TOKEN = 'REMOVE_TOKEN';
 export const USER_REGISTRATION = 'USER_REGISTRATION';
 
 // Settings
-
 export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
 export const CHANGE_THEME = 'CHANGE_THEME';
 
 // Chat
-
 export const CHAT_USERS_LIST = 'CHAT_USERS_LIST';
 
+// Interests
+export const INTERESTS_LIST = 'INTERESTS_LIST';
 
 // Errors
-
 export const CHAT_USERS_LIST_ERROR = 'CHAT_USERS_LIST_ERROR';
+
+// Favorite
+export const STORE_FAVORITE = 'STORE_FAVORITE';
+export const FAVORITE_ERROR = 'FAVORITE_ERROR';
+export const UPDATE_FAVORITE_INFO_ERROR = 'UPDATE_FAVORITE_INFO_ERROR';

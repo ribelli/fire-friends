@@ -6,9 +6,8 @@ $defaultGreyColor: #828282;
   bottom: 0;
   left: 30%;
   right: 0;
-  border-top: 1px solid #e0e0e0;
-  border-bottom: 10px solid $defaultGreyColor;
-  background-color: #efefef;
+  border-top: 9px solid #e0e0e0;
+  background-color: #ffffff;
 
   @media screen and (max-height: 768px) {
     padding: 12px 10px;

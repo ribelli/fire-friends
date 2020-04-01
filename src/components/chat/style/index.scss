@@ -16,9 +16,19 @@ $classicLightGrey: #464646;
   }
 
   .respondent-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 14px;
     color: #efefef;
     background-color: #505050;
     border-top: 1px solid $classicLightGrey;
+
+    &__avatar {
+      width: 35px;
+      border-radius: 50%;
+      padding: 3px;
+      margin: 0 5px;
+    }
   }
 }

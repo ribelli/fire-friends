@@ -1,20 +1,21 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router-dom';
 import './style/index.scss';
-import Avatar from "../avatar";
-import InterestsGraphUser from "../interests-graph-user";
+import Avatar from '../avatar';
+import InterestsGraphUser from '../interests-graph-user';
 
 class FavoriteUser extends Component {
     redirectHandler = to => {
-        this.props.history.push(to);
+        this.props.history.push('users/id:' + to);
     };
 
     render() {
-        const {userName, name, age, avatarUrl, country, city} = this.props;
+        console.log(this.props)
+        const {id, userName, name, age, avatarUrl, country, city} = this.props;
 
         return (
             <div className='favorite-user'>
-                <div onClick={() => this.redirectHandler(userName)}>
+                <div onClick={() => this.redirectHandler(id)}>
                     <Avatar content={avatarUrl} isDefaultSize={true} />
                 </div>
                 <div className='general-info'>

@@ -25,4 +25,8 @@
       background: #3b1a62;
     }
   }
+  &._grow-1 {
+    flex-grow: 1;
+    width: auto;
+  }
 }

@@ -7,20 +7,21 @@ import './i18n';
 
 import AuthenticationRequired from './high-order-component';
 import store from './store/store.js';
-import { storeTokenAction } from "./store/actions/authentication-actions";
+import { storeTokenAction } from './store/actions/authentication-actions';
 import * as serviceWorker from './serviceWorker';
 import App from './App';
 import HomePage from './routes/home';
-import MessagesPage from "./routes/messages";
-import GroupPage from "./routes/group-page";
-import GroupsPage from "./routes/groups";
-import FavoritesPage from "./routes/favorites";
-import LoginPage from "./routes/login";
-import ProfilePage from "./routes/profile";
-import RegistrationPage from "./routes/registration";
-import RegistrationTokenPage from "./routes/registration-token";
-import SettingsPage from "./routes/settings/settings";
-import AboutPage from "./routes/about";
+import MessagesPage from './routes/messages';
+import GroupPage from './routes/group-page';
+import GroupsPage from './routes/groups';
+import FavoritesPage from './routes/favorites';
+import LoginPage from './routes/login';
+import ProfilePage from './routes/profile';
+import RegistrationPage from './routes/registration';
+import RegistrationTokenPage from './routes/registration-token';
+import SettingsPage from './routes/settings/settings';
+import AboutPage from './routes/about';
+import UserPage from "./routes/user-page";
 
 const token = localStorage.getItem('token');
 if (token) {
@@ -43,6 +44,7 @@ ReactDOM.render(
                     <Route exact path='/messages' component={AuthenticationRequired(MessagesPage)}/>
                     <Route exact path='/registration' component={RegistrationPage} />
                     <Route exact path='/about' component={AboutPage} />
+                    <Route exact path='/users/:id' component={AuthenticationRequired(UserPage)}/>
                     {/*<Route exact path='/reset/password' component={ResetPasswordPage} />*/}
                     {/*<Route exact path='/note/:id' component={AuthenticationRequired(NotePage)}/>*/}
                 </App>

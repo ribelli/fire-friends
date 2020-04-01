@@ -6,7 +6,7 @@ class Footer extends Component {
     render() {
 
         let isShow = this.props.isShowFooter ? 'none' : 'flex';
-        const currentDate = 2019;
+        const currentDate = 2020;
 
         return (
             <footer className='footer-layer _dark' style={{display: isShow}}>

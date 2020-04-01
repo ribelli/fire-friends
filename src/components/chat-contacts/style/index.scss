@@ -2,13 +2,25 @@
   height: 100%;
 
   &__title {
+    height: 36px;
     background-color: #8a8a8a;
     color: #333333;
+    padding: 8px;
   }
 
   &__list {
     margin: 0 auto;
+    padding: 0 15px;
     overflow-y: auto;
     height: 100%;
   }
+}
+
+.chat-settings {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 9px solid #e0e0e0;
+  border-right: 9px solid #e0e0e0;
+  background-color: #efefef;
 }

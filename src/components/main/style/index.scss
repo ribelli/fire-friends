@@ -1,3 +1,30 @@
 .main {
   //background-color: #FBFEF9;
+
+  .c-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    //justify-content: flex-end;
+
+    .c-info {
+      padding: 0 15px;
+      .rsm-svg {
+        width: 700px;
+        height: 345px;
+        border: 2px solid #b5b5b5;
+      }
+    }
+
+    .c-login {
+
+      .registration-form {
+        margin: 10px 15px 20px;
+      }
+
+      .login-form {
+        margin: 10px 15px 20px;
+      }
+    }
+  }
 }

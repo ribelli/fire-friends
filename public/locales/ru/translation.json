@@ -11,19 +11,25 @@
       "about": "About",
       "privacy": "Privacy & Terms"
     },
+    "chat": {
+      "contacts": "Контакты"
+    },
     "profile": {
       "aboutYourself": "Пара слов о себе",
       "firstName": "Имя",
       "firstNameTip": "Имя, которое увидят пользователи",
       "lastName": "Фамилия",
-      "email": "email",
+      "email": "email *",
       "password": "пароль",
-      "username": "логин",
+      "username": "логин *",
       "usernameTip": "Ваш логин *",
       "selectImage": "Загрузить изображение",
       "country": "Страна",
       "city": "Город",
-      "birth": "Год рождения"
+      "birth": "Год рождения",
+      "letterboxd": "letterboxd аккаунт",
+      "favoriteFilms": "Добавить любимые фильмы (IMDb - eng)",
+      "searchText": "Найти"
     },
     "registration": {
       "createAccount": "Создать аккаунт",

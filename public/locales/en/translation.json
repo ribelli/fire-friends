@@ -11,19 +11,25 @@
       "about": "About",
       "privacy": "Privacy & Terms"
     },
+    "chat": {
+      "contacts": "Contacts"
+    },
     "profile": {
-      "aboutYourself": "A few words about yourself",
+      "aboutYourself": "A few woofs about yourself",
       "firstName": "First name",
       "firstNameTip": "Your name for other users",
       "lastName": "Last name",
       "password": "password",
-      "email": "email",
-      "username": "username",
+      "email": "email *",
+      "username": "username *",
       "usernameTip": "Your username *",
       "selectImage": "Upload Image",
       "country": "Country",
       "city": "City",
-      "birth": "Year of birth"
+      "birth": "Year of birth",
+      "letterboxd": "letterboxd account",
+      "favoriteFilms": "Add a favorite movies (IMDb)",
+      "searchText": "Search"
     },
     "registration": {
       "createAccount": "Create an account",

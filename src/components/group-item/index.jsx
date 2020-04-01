@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './style/index.scss'
-//import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
 import InterestsGraphUser from "../interests-graph-user";
 import {Link} from "react-router-dom";
-import {Popover} from "react-awesome-popover";
+// import {Popover} from "react-awesome-popover";
 
 class GroupItem extends Component {
 

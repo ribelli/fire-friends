@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 import './style/index.scss';
-import Chat from "../../components/chat";
-import ChatContacts from "../../components/chat-contacts";
-import SplitPane from "../../components/split-pane";
+import Chat from '../../components/chat';
+import ChatContacts from '../../components/chat-contacts';
+import SplitPane from '../../components/split-pane';
+// import LoadingSpinner from "../../components/loading-spinner";
 
 const doggyUrl = 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg';
 const arrayUsers = ['Хороший мальчик', 'Пушистый засранец'];
@@ -59,13 +60,14 @@ const DUMMY_DATA = {
         ],
     user: {
         id:0,
-        username: arrayUsers[0],
+        // username: arrayUsers[0],
         color: 'cornflowerblue',
         avatarUrl: doggyUrl
     },
     respondent: {
         id:0,
-        username: arrayUsers[1]
+        username: arrayUsers[1],
+        avatarUrl: 'https://placekitten.com/g/64/64'
     }
 };
 
@@ -73,8 +75,12 @@ class MessagesPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: ''
-        }
+            value: '',
+            // data: 'Initial data...', // for resize
+            chatPhoto: '',
+            chatName: '',
+            chatText: ''
+        };
     }
 
     componentDidMount() {
@@ -97,20 +103,32 @@ class MessagesPage extends Component {
     //     this.setState({text});
     // };
 
+    handleChat = (chatValue) => {
+        this.setState( {
+            chatPhoto: chatValue.photo,
+            chatName: chatValue.name,
+            chatText: chatValue.text
+        });
+    };
+
     render() {
+        const currentUser = this.props.state.userReducer;
+        DUMMY_DATA.user.username = currentUser.username;
+
         return (
-            <div className='message-page-container'>
-                <SplitPane
-                    left={
-                        <ChatContacts />
-                    }
-                    right={
-                        <Chat messages={DUMMY_DATA.messages}
-                              currentUser={DUMMY_DATA.user}
-                              respondent={DUMMY_DATA.respondent} />
-                    }
-                />
-            </div>
+                <div className="message-page-container">
+                    <SplitPane
+                        left={
+                            <ChatContacts update={this.props.update} onSelectChat={this.handleChat}/>
+                        }
+                        right={
+                            <Chat
+                                  messages={DUMMY_DATA.messages}
+                                  currentUser={DUMMY_DATA.user}
+                                  respondent={DUMMY_DATA.respondent} />
+                        }
+                    />
+                </div>
         );
     };
 }

@@ -25,6 +25,24 @@ export const fetchUserInfo = () => (dispatch, getState) => {
         .catch(error => console.log(error));
 };
 
+export const fetchFilmsInfo = (your_API, movieID) => (dispatch, getState) => {
+    return axios.get(`https://www.omdbapi.com/?apikey=${your_API}&i=${movieID}&plot=full`)
+        .then(response => {
+            dispatch(storeUserInfoAction(response.data));
+            return response.data
+        })
+        .catch(error => console.log(error));
+};
+
+export const searchListOfFilms = (API, searchQuery) => (dispatch, getState) => {
+    return axios.get(`https://www.omdbapi.com/?apikey=${API}&s=${searchQuery}&plot=full`)
+        .then(response => {
+            dispatch(storeUserInfoAction(response.data));
+            return response.data
+        })
+        .catch(error => console.log(error));
+};
+
 export const changeUserInfo = (data) => (dispatch, getState) => {
     const token = localStorage.getItem('token');
     const config = {

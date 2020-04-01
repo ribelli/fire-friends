@@ -1,0 +1,28 @@
+.movie-select {
+  width: 500px;
+
+  .movie-list-container {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0;
+
+    &:after {
+      content: "";
+      display: inline-block;
+      width: auto;
+      -webkit-box-flex: 1;
+      flex: 1 1 auto;
+    }
+
+    &._favorite {
+      background-color: #f2f2f2;
+      padding: 20px 15px 10px 5px;
+
+      &._empty {
+        display: none;
+      }
+    }
+  }
+}

@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import './style/index.scss';
-
 import { userLoginAction } from '../../store/actions/authentication-actions.js';
 import { validateLogin } from '../../helpers/registration-helpers.js';
 import { withTranslation } from 'react-i18next';
-
 
 
 class LoginRegistrationForm extends Component {
@@ -23,9 +21,9 @@ class LoginRegistrationForm extends Component {
         this.updateHistory();
     };
 
-    componentDidUpdate = () => {
-        this.updateHistory();
-    };
+    // componentDidUpdate = () => {
+    //     this.updateHistory();
+    // };
 
     onChangeHandler = event => {
         const name = event.currentTarget.name;

@@ -36,7 +36,7 @@ class Header extends Component {
                         <GlobalSearch/>
                         <LanguageSelect/>
                         <UserCard user={userInfo}
-                                  isNewFiend={this.props.isFriend}
+                                  isNewFriend={this.props.isFriend}
                                   eventCounter={comment.action}/>
                     </div>
                 </Suspense>

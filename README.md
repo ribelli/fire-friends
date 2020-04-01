@@ -1,3 +1,8 @@
+TODO: API LAstFM, letterboxd, bookstore
+TODO: sort by gender, age, countries
+TODO: optional import
+
+
 This project in progress of development now.
 
 ## Available Scripts
@@ -52,3 +57,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### for backend - Downloads user$ ./woofie_backend_cors.woof
