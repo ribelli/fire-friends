@@ -10,31 +10,25 @@ class FavoriteUser extends Component {
     };
 
     render() {
-        console.log(this.props)
         const {id, userName, name, age, avatarUrl, country, city} = this.props;
 
         return (
-            <div className='favorite-user'>
-                <div onClick={() => this.redirectHandler(id)}>
-                    <Avatar content={avatarUrl} isDefaultSize={true} />
-                </div>
-                <div className='general-info'>
-                    <div className='general-info__base'>
+            <div className="favorite-user" onClick={() => this.redirectHandler(id)}>
+                <Avatar content={avatarUrl} isDefaultSize={true} />
+                <div className="general-info">
+                    <div className="general-info__base">
                         {name}, <span>{age}</span>
                     </div>
-                    <div className='general-info__username'
-                         onClick={() => this.redirectHandler(userName)}>
+                    <div className="general-info__username">
                         {userName}
                     </div>
                 </div>
                 <InterestsGraphUser/>
-                <div className='location-info'>
-                    <span className='location-info__country'
-                          onClick={() => this.redirectHandler(`${'statistics\\'}` + country)}>
+                <div className="location-info">
+                    <span className="location-info__country">
                         {country}:
                     </span>
-                    <span className='location-info__city'
-                          onClick={() => this.redirectHandler(`${'statistics\\'}` + city)}>
+                    <span className="location-info__city">
                         {city}
                     </span>
                 </div>

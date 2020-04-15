@@ -2,128 +2,148 @@ import React, {Component, Suspense} from 'react';
 import './style/index.scss';
 import FavoriteUser from '../../components/favorite-user';
 import LoadingSpinner from '../../components/loading-spinner';
+import Select from 'react-select';
 
-const index = {
-    user1: {
+const dataMap = [
+    {
         id: 0,
         name: 'Carlo',
         userName: 'Carlo228',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 27,
-        country: 'SP',
+        country: 'Spain',
         city: 'Madrid'
-    },
-    user2: {
+    }, {
         id: 1,
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'FI',
+        country: 'Finland',
         city: 'Helsinki'
-    },
-    user3: {
+    }, {
         id: 2,
         name: 'Kotey',
         userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'RU',
+        country: 'Russia',
         city: 'Saint Petersburg'
-    },
-    user4: {
+    }, {
         id: 3,
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'FI',
+        country: 'Finland',
         city: 'Helsinki'
-    },
-    user5: {
+    }, {
         id: 4,
         name: 'Kotey',
         userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'RU',
+        country: 'Russia',
         city: 'Saint Petersburg'
-    },
-    user6: {
+    }, {
         id: 5,
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'FI',
+        country: 'Finland',
         city: 'Helsinki'
-    },
-    user7: {
+    }, {
         id: 6,
         name: 'Kotey',
         userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'RU',
-        city: 'Saint Petersburg'
-    },
-    user8: {
+        country: 'Russia',
+        city: 'Moscow'
+    }, {
         id: 7,
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'FI',
+        country: 'Finland',
         city: 'Helsinki'
-    },
-    user9: {
+    }, {
         id: 8,
         name: 'Kotey',
         userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'RU',
-        city: 'Saint Petersburg'
-    },
-    user10: {
+        country: 'Russia',
+        city: 'Moscow'
+    }, {
         id: 9,
         name: 'Ksenia',
         userName: 'WoofControl',
         avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
         age: 28,
-        country: 'FI',
+        country: 'Finland',
         city: 'Helsinki'
-    },
-    user11: {
+    }, {
         id: 11,
         name: 'Kotey',
         userName: 'BadCat',
         avatarUrl: 'https://placekitten.com/g/64/64',
         age: 2,
-        country: 'RU',
+        country: 'Russia',
         city: 'Saint Petersburg'
-    },
-};
+    }
+];
+
+// const countryOptions = [
+//     { value: 'RU', label: 'Russia' },
+//     { value: 'UA', label: 'Ukraine' },
+// ];
+
 
 class FavoritesPage extends Component {
     state = {
-        initialData: false
+        selectedCountry: null,
+        filters: this.props.filters,
+        dataMap: dataMap,
+        countryOptions: [],
+        allCountriesOption: {value: 'All countries', label: 'All countries'}
     };
 
-    componentDidMount() {
-        if (this.props.notes) {
-            this.setState({
-                initialData: true
-            });
-        }
+    componentWillMount() {
+        this.onLoad(dataMap);
+        console.log(this.collectCountries())
+        this.setState({
+            countryOptions: this.collectCountries() // only unique values
+        });
     };
 
-    componentDidUpdate() {
-        if (!this.state.initialData) {
-            this.setState({
-                initialData: true
-            });
-        }
+    collectCountries() {
+        let { dataMap } = this.state;
+        let buffer = [];
+        let result = [];
+
+        dataMap.forEach(function(obj){
+            if (!buffer.includes(obj.country)) {
+                buffer.push(obj.country);
+                result.push({value: obj.country, label: obj.country});
+            }
+        });
+
+        return [this.state.allCountriesOption].concat(result);
+    }
+
+    handleSelectCountryChange = selectedCountry => {
+        this.setState(
+            {
+                selectedCountry,
+                dataMap:
+                    (selectedCountry === this.state.allCountriesOption) ? dataMap
+                        : dataMap.filter(opt => opt.country === selectedCountry.value)
+            },
+            () => console.log(`Option selected:`, this.state.selectedCountry.value),
+        );
     };
 
     static renderFavorites(favorite, index) {
@@ -140,21 +160,64 @@ class FavoritesPage extends Component {
         return <FavoriteUser {...props} key={index}/>
     }
 
+    parseData(data) {
+        const { filters } = this.state;
+
+        if (data && data.length) {
+            if (Array.isArray(filters) && filters.length) {
+                data.filter(options => options.country === filters[0].country);
+            }
+        }
+
+        return data;
+    }
+
+    onLoad = data => {
+        this.setState({
+            dataMap: this.parseData(data)
+        });
+    };
+
     render() {
-        return (
-            <Suspense fallback={<LoadingSpinner/>}>
-                <div className="favorites-page-container">
-                    <div>
-                        Favorites
-                    </div>
+        let {dataMap, selectedCountry } = this.state;
+        return dataMap ? this.renderData(dataMap, selectedCountry) : FavoritesPage.renderLoading();
+    };
+
+    renderData(data, selectedCountry) {
+        if (data && data.length > 0) {
+            return (
+                <Suspense fallback={<LoadingSpinner/>}>
+                    <div className="favorites-page-container">
+                        <div>
+                            Favorites
+                        </div>
+                        <div className="common-sort-block">
+                            <div className="common-sort-block__item">
+                                <Select
+                                    classNamePrefix='select-list'
+                                    placeholder="country"
+                                    value={selectedCountry}
+                                    onChange={this.handleSelectCountryChange}
+                                    options={this.state.countryOptions}
+                                    tabIndex="1"
+                                    isSearchable={true}/>
+                            </div>
+                        </div>
                         <div className="favorite-layout">
-                            {Object.values(index).map((favorite, i) =>
+                            {data.map((favorite, i) =>
                                 FavoritesPage.renderFavorites(favorite, i))}
                         </div>
-                </div>
-            </Suspense>
-        );
-    };
+                    </div>
+                </Suspense>
+            );
+        } else {
+            return <div>No items found</div>;
+        }
+    }
+
+    static renderLoading() {
+        return <div>Loading...</div>;
+    }
 }
 
 export default FavoritesPage;
