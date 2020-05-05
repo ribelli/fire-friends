@@ -4,7 +4,8 @@ $avatarMiddleSize: 150px;
 $avatarMiniSize: 33px;
 
 .avatar {
-  position: relative;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     .user-avatar_middle {

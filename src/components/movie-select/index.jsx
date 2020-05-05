@@ -95,7 +95,7 @@ class MovieSelect extends Component {
                 </ul>
 
                 <ul className={`movie-list-container _favorite ${favoriteMovies.length > 0 ? "" : "_empty"}`}>
-                    <span>Favorite films:</span>
+                    <span className="movie-list-container__title">Favorite films:</span>
                     {(favoriteMovies.length > 0) ?
                         favoriteMovies.map( (movie, id) => (
                         <MovieCard onSelectMovie={this.handleFavoriteMovies}

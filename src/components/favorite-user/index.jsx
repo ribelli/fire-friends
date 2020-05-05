@@ -15,22 +15,19 @@ class FavoriteUser extends Component {
         return (
             <div className="favorite-user" onClick={() => this.redirectHandler(id)}>
                 <Avatar content={avatarUrl} isDefaultSize={true} />
-                <div className="general-info">
-                    <div className="general-info__base">
+                <div className="favorite-user__info">
+                    <div className="general-info">
                         {name}, <span>{age}</span>
                     </div>
-                    <div className="general-info__username">
-                        {userName}
+                    <InterestsGraphUser/>
+                    <div className="location-info">
+                        <span className="location-info__country">
+                            {country}:
+                        </span>
+                        <span className="location-info__city">
+                            {city}
+                        </span>
                     </div>
-                </div>
-                <InterestsGraphUser/>
-                <div className="location-info">
-                    <span className="location-info__country">
-                        {country}:
-                    </span>
-                    <span className="location-info__city">
-                        {city}
-                    </span>
                 </div>
             </div>
         )

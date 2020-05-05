@@ -6,19 +6,26 @@ $defaultGreyColor: #828282;
   bottom: 0;
   left: 30%;
   right: 0;
-  border-top: 9px solid #e0e0e0;
   background-color: #ffffff;
 
-  @media screen and (max-height: 768px) {
+  @media (max-width: 575.98px) {
+    left: 0;
+    border-top: 1px solid #e0e0e0;
+    padding: 5px;
+  }
+
+  @media (min-width: 576px) and (max-width: 768px) {
     padding: 12px 10px;
   }
 
-  @media all and (min-height: 769px) {
-    padding: 10px 35px;
+  @media (min-width: 769px) {
+    padding: 12px 15px;
+    border-top: 9px solid #e0e0e0;
   }
 
   &__form {
     width: 100%;
+    height: 15vh;
     display: flex;
     flex-direction: row;
   }

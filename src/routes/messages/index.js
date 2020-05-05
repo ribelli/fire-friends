@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component, Suspense } from 'react';
 
 import './style/index.scss';
 import Chat from '../../components/chat';
@@ -79,7 +79,9 @@ class MessagesPage extends Component {
             // data: 'Initial data...', // for resize
             chatPhoto: '',
             chatName: '',
-            chatText: ''
+            chatText: '',
+            isShow: true,
+            isMobile: this.isMobileDevice()
         };
     }
 
@@ -94,6 +96,10 @@ class MessagesPage extends Component {
         });
     };
 
+    isMobileDevice = ()  => {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
+
     // onSendMessage = (text) => {
     //     this.state.messages.push({
     //         text,
@@ -104,6 +110,9 @@ class MessagesPage extends Component {
     // };
 
     handleChat = (chatValue) => {
+        if (this.state.isMobile) {
+            this.callAllContacts();
+        }
         this.setState( {
             chatPhoto: chatValue.photo,
             chatName: chatValue.name,
@@ -111,24 +120,37 @@ class MessagesPage extends Component {
         });
     };
 
+    callAllContacts = () => {
+        this.setState({
+            isShow: !this.state.isShow
+        });
+    };
+
     render() {
+        let {isShow, isMobile} = this.state;
+        console.log(isShow, isMobile)
         const currentUser = this.props.state.userReducer;
         DUMMY_DATA.user.username = currentUser.username;
 
         return (
+            <Suspense fallback='loading'>
                 <div className="message-page-container">
                     <SplitPane
                         left={
-                            <ChatContacts update={this.props.update} onSelectChat={this.handleChat}/>
+                            (!isShow || !isMobile) ?
+                                 <ChatContacts update={this.props.update}
+                                               onSelectChat={this.handleChat}/> : null
                         }
                         right={
-                            <Chat
+                            (isShow) ?
+                            <Chat onClick={this.callAllContacts}
                                   messages={DUMMY_DATA.messages}
                                   currentUser={DUMMY_DATA.user}
-                                  respondent={DUMMY_DATA.respondent} />
+                                  respondent={DUMMY_DATA.respondent} /> :null
                         }
                     />
                 </div>
+            </Suspense>
         );
     };
 }

@@ -1,7 +1,12 @@
 @import "../../css/fr-label";
 
 .settings-form {
-  min-width: 500px;
+  flex: 1.5;
+
+  &__item {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .select-list {
       &__control {

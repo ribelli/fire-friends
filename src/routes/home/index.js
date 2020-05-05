@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import InterestsPersonalGraph from "../../components/interests-personal-graph";
-import Main from "../../components/main";
-import './style/home.scss';
+import InterestsPersonalGraph from '../../components/interests-personal-graph';
+import Main from '../../components/main';
+import './style/index.scss';
 
 class HomePage extends Component {
     state = {
@@ -28,7 +28,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div className='home-page-container'>
+            <div className="home-page-container">
                 <div>
                     <InterestsPersonalGraph />
                     <Main/>

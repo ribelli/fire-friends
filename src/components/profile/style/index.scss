@@ -1,9 +1,11 @@
 .profile {
   display: flex;
+  flex-wrap: wrap;
   padding: 25px 0;
 
   .upload-area {
     color: #8a8a8a;
+    font-size: 12px;
     cursor: pointer;
 
     &__input {
@@ -12,10 +14,10 @@
   }
 
   &__avatar {
-    width: 200px;
-    height: 200px;
+    flex: 1;
+    height: 215px;
     background-color: #f2f2f2;
-    margin: 0 10px;
+    margin: 0 5px 15px;
 
     .user-avatar {
       margin: 15px;

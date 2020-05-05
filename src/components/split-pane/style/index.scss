@@ -8,7 +8,11 @@
     height: 100%;
     color: #464646;
 
-    @media (max-width: 768px) {
+    @media (max-width: 575.98px) {
+      width: 100%;
+    }
+
+    @media (min-width: 576px) and (max-width: 768px) {
       width: 15%;
     }
 
@@ -20,7 +24,11 @@
   &__right-side {
     height: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: 575.98px) {
+      //flex: 1;
+    }
+
+    @media (min-width: 576px) and (max-width: 768px) {
       width: 85%;
     }
 

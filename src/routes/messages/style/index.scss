@@ -1,9 +1,13 @@
 .message-page-container {
-  height: calc(100% - 123px);
   position: absolute;
   width: 100%;
 
   @media (max-width: 768px) {
+    height: calc(100% - 22vh);
     font-size: calc(10px + 2vmin);
+  }
+
+  @media (min-width: 769px) {
+    height: calc(100% - 25vh);
   }
 }

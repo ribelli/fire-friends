@@ -2,6 +2,7 @@ $classicLightGrey: #464646;
 
 .chat-container {
   height: 100%;
+  flex: 1;
 
   .chat-view {
     height: 100%;
@@ -29,6 +30,18 @@ $classicLightGrey: #464646;
       border-radius: 50%;
       padding: 3px;
       margin: 0 5px;
+    }
+
+    &__link {
+      @media (max-width: 575.98px) {
+        position: absolute;
+        left: 5px;
+        color: #9d9d9d;
+        font-size: 13px;
+      }
+      @media (min-width: 576px) {
+        display: none;
+      }
     }
   }
 }

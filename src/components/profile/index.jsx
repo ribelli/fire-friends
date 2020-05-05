@@ -7,7 +7,7 @@ import {withTranslation} from "react-i18next";
 const mockProfile = {
     id: 0,
     name: 'Carlo',
-    userName: 'Carlo228',
+    userName: 'Carlo',
     avatarUrl: 'https://images.dog.ceo/breeds/terrier-norfolk/n02094114_1601.jpg',
     age: 27,
     country: 'SP',

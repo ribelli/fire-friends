@@ -4,13 +4,16 @@ class SettingsPage extends Component {
     render() {
         return(
             <>
-                <div>Title: Settings</div>
-                <div>
-                    Change theme color
+                <div>Settings</div>
+                <div>Change theme color
                     <input type='checkbox'/>
                 </div>
-                <div>Subscribe</div>
-                <div>Exit</div>
+                <div>Subscribe
+                    <input type='checkbox'/>
+                </div>
+                <div>Delete my account
+                    <input type='checkbox'/>
+                </div>
             </>
         )
     }

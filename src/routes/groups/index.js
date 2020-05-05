@@ -5,10 +5,10 @@ import GroupItem from "../../components/group-item";
 
 const index = [
     {
-        id: 1488,
+        id: 149,
         name: 'English light',
-        userValue: '1488',
-        text: 'enjoy! azaza',
+        userValue: '149',
+        text: 'enjoy!',
         author: {
             name: 'Mr Kitty',
             id: '/profile',
@@ -21,8 +21,8 @@ const index = [
     {
         id: 148,
         name: 'PC BOYARE TYT',
-        userValue: '228',
-        text: 'LOL',
+        userValue: '22',
+        text: 'text',
         author: {
             name: 'Mr Kitty',
             id: '/profile',
@@ -49,7 +49,7 @@ const index = [
     {
         id: 14,
         name: 'Shelter for woof-seniors',
-        userValue: '1488',
+        userValue: '149',
         text: 'This group for greatest people our planet. For awesome people',
         author: {
             name: 'Mr Kitty',

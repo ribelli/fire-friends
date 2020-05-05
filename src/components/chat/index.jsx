@@ -61,6 +61,10 @@ class Chat extends Component {
         }));
     };
 
+    callAllContacts = () => {
+        this.props.onClick();
+    };
+
     // renderMessage(message, i) {
     //     const {user, text, date} = message;
     //     const {currentUser} = this.props;
@@ -91,8 +95,11 @@ class Chat extends Component {
         return (
             <div className="chat-container">
                 <div className="respondent-view">
+                    <div className="respondent-view__link" onClick={() => this.callAllContacts()}>
+                        All contacts
+                    </div>
                     <img src={respondent.avatarUrl}
-                         className="respondent-view__avatar" alt="respondent-avatar"/>
+                     className="respondent-view__avatar" alt="respondent-avatar"/>
                     <div>{respondent.username}</div>
                 </div>
                 <ul className="chat-view" ref="wrap">

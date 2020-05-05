@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import './style/index.scss'
-import { getConversations } from '../../store/actions/chat-actions';
+import React, { useState, useEffect, Suspense } from 'react';
+import {withTranslation} from "react-i18next";
 import { connect } from 'react-redux';
+import { getConversations } from '../../store/actions/chat-actions';
 import ChatListItem from '../chat-list-item';
-// import {withTranslation} from "react-i18next";
+import './style/index.scss'
 
 function ChatContacts(props) {
     const [conversations, setConversations] = useState([]);
@@ -20,7 +20,7 @@ function ChatContacts(props) {
                         key: result.id,
                         photo: result.picture.large,
                         name: `${result.name.first} ${result.name.last}`,
-                        text: 'Hello, World'
+                        text: 'It\'s just a sample'
                     };
                 });
                 setConversations([...conversations, ...newConversations])
@@ -33,11 +33,10 @@ function ChatContacts(props) {
         props.onSelectChat(chat);
     };
 
-    //const {t} = this.props;
+    const {t} = props;
     return(
-
         <aside className="chat-contacts">
-            <div className="chat-contacts__title">Contacts</div>
+            <div className="chat-contacts__title">{t('main.chat.contacts')}</div>
             <ul className="chat-contacts__list">
                 {conversations.map((conversation, id) => (
                     <ChatListItem id={id}
@@ -58,4 +57,4 @@ const mapStateToProps = state => {
     };
 };
 
-export default connect(mapStateToProps)(ChatContacts);
+export default withTranslation()(connect(mapStateToProps)(ChatContacts));
