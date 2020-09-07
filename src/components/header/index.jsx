@@ -6,14 +6,7 @@ import CommonMenu from "../common-menu";
 import GlobalSearch from "../global-search";
 import LanguageSelect from "../language-select";
 
-const comment = {
-    date: new Date(),
-    text: 'I hope you enjoy learning React!',
-    author: {
-        name: 'Mr Kitty',
-        id: '/profile',
-        avatarUrl: 'https://placekitten.com/g/64/64',
-    },
+const USER = {
     action: {
         eventValue: 6,
     },
@@ -37,7 +30,7 @@ class Header extends Component {
                         <LanguageSelect/>
                         <UserCard user={userInfo}
                                   isNewFriend={this.props.isFriend}
-                                  eventCounter={comment.action}/>
+                                  eventCounter={USER.action}/>
                     </div>
                 </Suspense>
             </header>

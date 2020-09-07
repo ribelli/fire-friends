@@ -1,6 +1,6 @@
 @import 'components/styles';
 
-$defaultPadding: 47px;
+$defaultPadding: 47px; // fix to 100% from parent element
 
 * {
   box-sizing: border-box;
