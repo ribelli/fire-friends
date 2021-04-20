@@ -17,44 +17,42 @@ export const validateIdenticalPasswords = (password, password_repeat) => {
     .*$              : End
     */
 
-    let validated_passwords = {
+    return {
         valid: checkPassword.test(password),
         identical: password === password_repeat,
-    };
-    return validated_passwords
+    }
 };
 
 export const validateLogin = credentials => {
     let email = !!credentials.email;
     let password = !!credentials.password;
     let validated_credentials = email && password;
-    let check = {
+    return {
         email,
         password,
         validated_credentials
     };
-    return check;
 };
 
 export const validateResetPasswordInput = user_input => {
-    const validated_passwords = true; //validateIdenticalPasswords(user_input.password, user_input.password_repeat);
-    let validated_data = {
-        email: user_input.email === '' ? false : true,
-        token: user_input.token === '' ? false : true,
+    // const validated_passwords = true;
+    //validateIdenticalPasswords(user_input.password, user_input.password_repeat);
+    return {
+        email: user_input.email !== '',
+        token: user_input.token !== '',
         //password_valid: validated_passwords.valid,
         //passwords_identical: validated_passwords.identical
     };
-    return validated_data;
 };
 
 export const validateRegistrationValidation = user_input => {
-    const validated_passwords = true;  validateIdenticalPasswords(user_input.password, user_input.password_repeat);
-    let validated_data = {
-        email: user_input.email === '' ? false : true,
-        username: user_input.username === '' ? false : true,
+    // const validated_passwords = true;
+    validateIdenticalPasswords(user_input.password, user_input.password_repeat);
+    return {
+        email: user_input.email !== '',
+        username: user_input.username !== '',
         // token: user_input.token === '' ? false : true,
         //password_valid: validated_passwords.valid,
         //passwords_identical: validated_passwords.identical
     };
-    return validated_data;
 };

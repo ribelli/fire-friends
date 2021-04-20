@@ -2,7 +2,7 @@ import React, { Component, Suspense } from 'react';
 
 import './style/index.scss';
 import Chat from '../../components/chat';
-import ChatContacts from '../../components/chat-contacts';
+import ChatContacts from '../../components/chat/chat-contacts';
 import SplitPane from '../../components/split-pane';
 // import LoadingSpinner from "../../components/loading-spinner";
 

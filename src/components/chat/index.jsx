@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ChatMessage from '../chat-message';
+import ChatMessage from './chat-message';
 import InputArea from '../input-area';
-import TypingIndicator from '../typing-indicator';
+import TypingIndicator from './typing-indicator';
 import './style/index.scss';
 
 class Chat extends Component {
